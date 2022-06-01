@@ -23,8 +23,8 @@ if (isset($_POST['ebay'])) {
         'paramValue' => 'USD'
       ),
       array(
-        'name' => $_POST['maxPrice'],
-        'value' => '25',
+        'name' => 'MaxPrice',
+        'value' => $_POST['maxPrice'],
         'paramName' => 'Currency',
         'paramValue' => 'USD'
       ),
@@ -93,7 +93,6 @@ if (isset($_POST['ebay'])) {
 
 
 
-
   // echo "<pre> ";
   // echo buildURLArray($filterarray);
   // echo $resp;
@@ -147,6 +146,6 @@ if (isset($_POST['ebay'])) {
     </div>";
     }
   }
-  
+
 echo "<div class='ebay'>$results</div>";
 }

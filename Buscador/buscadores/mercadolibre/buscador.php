@@ -4,7 +4,7 @@
 if (isset($_POST['mercadolibre'])){
     echo '<div id="mercadolibre">';
     $mlid = str_replace(" ", "%20", $_POST['element']);
-    $data = json_decode(file_get_contents('https://api.mercadolibre.com/sites/MLA/search?q='.$mlid), true);
+    $data = json_decode(file_get_contents('https://api.mercadolibre.com/sites/MLA/search?q='.$mlid,'&Minimum-price=3000'), true);
 
     $valor = 0;
     foreach ($data["results"] as $i)
