@@ -58,29 +58,12 @@
         }
     }
 
-    @keyframes shake-top {
+    @keyframes scale-up-hor-center {
+        0% {
+            transform: scaleX(0);
+          }
         100% {
-            transform: rotate(0deg);
-            transform-origin: 50% 0;
-        }
-        10% {
-            transform: rotate(2deg);
-        }
-        20%,
-        40%,
-        60% {
-            transform: rotate(-4deg);
-        }
-        30%,
-        50%,
-        70% {
-            transform: rotate(4deg);
-        }
-        80% {
-            transform: rotate(-2deg);
-        }
-        90% {
-            transform: rotate(2deg);
+            transform: scaleX(1);
         }
     }
 
@@ -102,19 +85,19 @@
         align-items: center;
         min-height: 100vh;
         overflow: hidden;
-        background: #09095ed2;
+        background: #1b1ba0ce;
         font-family: Arial;
         box-sizing: border-box;
     }
     /*Logo*/
     .img{
         position: absolute;
-        width: 170px;
-        height: 170px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         background-color: rgba(233, 213, 134, 0.705);
 	    animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-        top: 150px;
+        top: 250px;
     }
     /*Fondo animado*/
     .circles{
@@ -221,7 +204,8 @@
         /*   border:1px solid red; */
         height: 100%;
         align-items: center;
-        animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both, shake-top 2.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 2.5s infinite both;
+        animation: slide-in-blurred-bottom 5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both, scale-up-hor-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;;
+        margin-left: 50px;
     }
 
     svg {
@@ -292,7 +276,7 @@
     <div class="container">
         <svg viewBox="0 0 960 300">
         <symbol id="s-text">
-            <text text-anchor="middle" x="50%" y="80%">Loading</text>
+            <text text-anchor="middle" x="50%" y="80%">Loading...</text>
         </symbol>
     
         <g class = "g-ants">
