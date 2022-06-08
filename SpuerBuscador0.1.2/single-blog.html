@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <section class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">dashbord</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon">
+                       <a href="#"><i class="fa fa-facebook"></i></a>
+                       <a href="#"><i class="fa fa-twitter"></i></a>
+                       <a href="#"><i class="fa fa-google-plus"></i></a>
+                       <a href="#"><i class="fa fa-linkedin"></i></a>
+                       <a href="#"><i class="fa fa-wifi"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="a-right">
+                        <a href="#"><p><span><i class="fa fa-user"></i></span>Login</p></a>
+                        <a href="#"><p><span><i class="fa fa-pencil"></i></span>Register</p></a>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <section class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                   <div class="logo">
+                    <a href="#"><h2>LOGO</h2></a>
+                   </div>
+                </div>
+                <div class="col-md-7">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">HOME</a></li>
+                      <li><a href="#">SHOP</a></li>
+                      <li><a href="#">BLOG</a></li>
+                      <li><a href="#">SHORTCODE</a></li>
+                      <li><a href="#">FEATURE</a></li>
+                      <li><a href="#">PAGES</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="cart">
+                        <p><i class="fa fa-cart-arrow-down"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                   <div class="header-part">
+                    <p>HOME &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;T-SHART&nbsp;&nbsp;&nbsp;<span><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;WOMEN T-SHART </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<section class="blog-slide-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="owl-carousel">
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                  <div class="one">
+                      <img src="img/single-blog-page.jpg" alt="">
+                      <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  </div>
+                </div>
+                <div class="shere">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Share Post</h2>
+                            <p><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#"></a><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blog-sidebar">
+                               <h2>Recent Post</h2>
+                        <div class="resent-post">
+                            <div class="resent-post-single">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="img/man.jpg" alt="">
+                                        <div class="text">
+                                            <h3>Is simply dummy text</h3>
+                                            <p>September 6, 2016</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resent-post-single">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="img/man.jpg" alt="">
+                                        <div class="text">
+                                            <h3>Is simply dummy text</h3>
+                                            <p>September 6, 2016</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resent-post-single">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="img/man.jpg" alt="">
+                                        <div class="text">
+                                            <h3>Is simply dummy text</h3>
+                                            <p>September 6, 2016</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="blog-sidebar">
+                           <h2>Categories</h2>
+                    <div class="categorie">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Advice (8)</p>
+                                <p>Articles (20)</p>
+                                <p>Comments (10)</p>
+                                <p>Design (5)</p>
+                                <p>Other (3)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-sidebar">
+                           <h2>Tags</h2>
+                    <div class="tags">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span>bussiness</span>
+                                <span>bussiness</span>
+                                <span>fun</span>
+                                <span>lorem</span>
+                                <span>performence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="comment">
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+               <div class="commententries">                         
+                        <h3> Comments (3) </h3>
+                        
+                        <ul class="commentlist">
+                            <li> 
+                                <article class="comment">
+                                    <header class="comment-author">
+                                        <img src="img/comment-author.jpg" alt="">                                           
+                                    </header>
+                                    <section class="comment-details">
+                                        <div class="author-name"> <a title="" href=""> <h5>Sadman Abir<span> June 2, 2016 at 12:05 pm </span></h5></a> </div>
+                                        <div class="comment-body">
+                                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                        </div>
+                                        <div class="reply"> <a title="" href=""><p>Reply</p></a> </div>
+                                    </section>   
+                                </article>
+                                
+                                <ul class="children">
+                                    <li> 
+                                        <article class="comment">
+                                            <header class="comment-author">
+                                                <img src="img/comment-author.jpg" alt="">                                           
+                                            </header>
+                                            <section class="comment-details">
+                                                <div class="author-name"> <a title="" href=""> <h5>Sadman Abir<span> June 2, 2016 at 12:05 pm </span></h5></a> </div>
+                                                <div class="comment-body">
+                                                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                                </div>
+                                                <div class="reply"> <a title="" href=""><p>Reply</p></a> </div>
+                                            </section>  
+                                        </article> 
+                                    </li>        
+                                </ul>
+                                          
+                            </li>  
+                            <li> 
+                                <article class="comment">
+                                    <header class="comment-author">
+                                        <img src="img/comment-author.jpg" alt="">                                         
+                                    </header>
+                                    <section class="comment-details">
+                                        <div class="author-name"> <a title="" href=""> <h5>Sadman Abir<span> June 2, 2016 at 12:05 pm </span></h5></a> </div>
+                                        <div class="comment-body">
+                                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                        </div>
+                                        <div class="reply"> <a title="" href=""><p>Reply</p></a> </div>
+                                    </section> 
+                                </article>                                      
+                            </li>        
+                        </ul>
+                         
+                </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-md-12">
+              <h2>Leave a Comment</h2>
+               <form action="php/sendmail.php" method="get">
+                <p>Comment</p>
+                <textarea></textarea>
+                <p>Name*</p>
+                <input type="text" name="" required>
+                <p>Email*</p>
+                <input type="email" name="" required>
+                <p>Website</p>
+                <input type="text" name="">
+                <input type="submit" value="SEND">     
+                </form>
+           </div>
+       </div>
+   </div>
+</section>
+<footer>
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>INFORMATION</h2>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                </div>
+                <div class="col-md-4 center">
+                    <h2>INFORMATION</h2>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-contact">
+                        <h2>CONTACT US</h2>
+                        <a href="#"><p><i class="fa fa-map-marker" aria-hidden="true"></i>Rangpur , Bangladesh</p></a>
+                        <a href="#"><p><i class="fa fa-phone" aria-hidden="true"></i>+88 01761070282</p></a>
+                        <a href="#"><p><i class="fa fa-envelope" aria-hidden="true"></i>sshahriar458@gmail.com</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+       <div class="footer_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="copy_txt">
+                        <p>Copyright © 2014  Designed by <span>shawon</span></p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer_logo">
+                        <img src="img/fedex.png">
+                        <img src="img/master-card.png">
+                        <img src="img/paypal.png">
+                        <img src="img/visa.png">
+                        <img src="img/american-express.png">
+                        <img src="img/dhl.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/active.js"></script>  
+</body>
+</html>
