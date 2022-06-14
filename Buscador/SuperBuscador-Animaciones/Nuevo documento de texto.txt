@@ -1,0 +1,23 @@
+    /*
+    .Nahuelito{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background-color: antiquewhite;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        right: 0;
+        top: 250px;
+    }
+
+    .Gonzalo{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: antiquewhite;
+        padding: 0;
+        left: 0;
+        top: 250px;
+        border-radius: 30px;     
+    }*/

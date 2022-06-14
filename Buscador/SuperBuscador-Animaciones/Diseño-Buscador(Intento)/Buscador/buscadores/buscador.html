@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*Fondo*/
+        @keyframes animate {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+
+        @keyframes scale-down-center {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.5);
+        }
+    }
+
+    body{
+        min-height: 100vh;
+        background: #1b1ba0ce;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /*Fondo animado*/
+    .circles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .circles li{
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 20s linear infinite;
+        bottom: -150px;
+        
+    }
+
+    .circles li:nth-child(1){
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2){
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(3){
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(4){
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 25s;
+    }
+
+    .circles li:nth-child(5){
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 5s;
+        animation-duration: 20s;
+    }
+
+    .circles li:nth-child(6){
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7){
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8){
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(9){
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 20s;
+    }
+
+    .circles li:nth-child(10){
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 15s;
+    }
+
+    #search{
+        border-radius: 20px;
+    }
+    #search:focus{
+        animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+    .buscador{
+        position: relative;
+        box-sizing: border-box; 
+        display: flex;
+        justify-content: center;
+        top: 30px;
+        height: 30px;
+    }
+
+    .volve,.busca{
+        position: relative;
+        z-index: 100;
+    }
+
+    .a{
+        position: relative;
+        top: 15px;
+        background-color: antiquewhite;
+        display: inline-block;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    .volve{
+        color: aliceblue;
+    }
+
+    .volve:hover{
+        color: rgba(78, 73, 109, 0.918);
+        width: 100px;
+        height: 100px;
+    }
+
+    .volve:link{
+        background-color: rgba(40, 30, 180, 0.747);
+        border-radius: 5px;
+        font-size: larger;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        height: 20px;
+        top: -250px;
+        left: 760px;
+        justify-content: center;
+    }
+    img{
+        position: relative;
+        height: 500px;
+        width: 450px;
+        right: -1000px;
+        border-radius: 30px;
+    }
+</style>
+
+<body>
+    <form action="buscadores.php" method="post" class="busca">
+        <div class="buscador">
+        <input type="search" name="element" id="search"><br>
+        </div>
+
+        <div class="a">
+        <input type="checkbox" name="mercadolibre" id="" value="on">
+        <label for="">Mercado Libre</label><br>
+        <input type="checkbox" name="ebay" id="" value="on">
+        <label for="">Ebay</label><br>
+        <input type="submit" value="enviar">
+        <div id="options">
+            <input type="range" name="minPrice" value="100000" min="1" max="100000"
+                oninput="this.nextElementSibling.value = this.value">
+            <output></output>
+            <input type="range" name="maxPrice" value="100000" min="1" max="100000"
+                oninput="this.nextElementSibling.value = this.value">
+            <output></output>
+        </div>
+
+        </div>
+    </form>
+    
+    <a href="../index.html" class="volve">Volver</a>
+
+    <img src="../../6feceb2be0876d1cc856e6ba16a4eebb.jpg" alt="">
+    
+
+    <!-- Divs para las animaciones de fondo -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
