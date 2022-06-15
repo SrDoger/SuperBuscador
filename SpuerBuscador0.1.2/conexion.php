@@ -1,4 +1,5 @@
-<?php 
-    $conexion = new mysqli("localhost","root","","empresa");
+<?php
+  $conn = new mysqli("localhost","root","","empresa");
 ?>
+
 
