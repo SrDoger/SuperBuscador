@@ -12,7 +12,7 @@
 <body>
     <div>
         <?php
-        include 'mercadolibre/buscador.php';
+        include '../buscador.php';
         include 'ebay/buscador.php';
 
         ?>
