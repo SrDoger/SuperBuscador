@@ -139,3 +139,23 @@
   height: 25px;
   width: 75px;
 }
+
+/**---------buscador--------------**/
+/**search bar**/
+
+.searchbar{
+  position: relative;
+  top: 40px;
+  left: 100px;
+}
+.boton{
+  vertical-align: middle;
+  background-color: green;
+  height: 24px;
+  width: 30px;
+  border: none;
+  border-radius: 5px;
+}
+.search{
+  border-radius: 5px;
+}

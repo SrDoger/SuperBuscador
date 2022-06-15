@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bode">
@@ -51,65 +51,19 @@
                       <li><a href="#">Caracteristicas</a></li>
                       <li><a href="#">Paginas</a></li>
                     </ul>
+                    <div class="searchbar">
+                        <form action="">
+                            <input type="text" class="search" name="element" id="">
+                            <input type="submit" class="boton" value="">
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 </header>
 <div class="cabeza">
-    <div class="way">
-    </div>
-</div>
-<div class="search-bar">
-    <h1>ALL SHOPS IN ONE</h3>
-    <form action="">
-        <input class="search" type="search">
-        <div>
-            <input class="sutmit" type="button">
-            <input class="login" type="button">
-        </div>
-    </form>
-</div>
-<footer>
-    <div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>INFORMATION</h2>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                </div>
-                <div class="col-md-4 center">
-                    <h2>INFORMATION</h2>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-contact">
-                        <h2>CONTACT US</h2>
-                        <a href="#"><p><i class="fa fa-map-marker" aria-hidden="true"></i>Rangpur , Bangladesh</p></a>
-                        <a href="#"><p><i class="fa fa-phone" aria-hidden="true"></i>+88 01761070282</p></a>
-                        <a href="#"><p><i class="fa fa-envelope" aria-hidden="true"></i>sshahriar458@gmail.com</p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>  
-<script src="js/bootstrap.min.js"></script>  
-<script src="js/active.js"></script>  
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
-
 <?php
 
 if (isset($_POST['mercadolibre'])){
@@ -167,3 +121,44 @@ if (isset($_POST['mercadolibre'])){
     echo '</div>';
 }
 ?>
+</div>
+<footer>
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>INFORMATION</h2>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                </div>
+                <div class="col-md-4 center">
+                    <h2>INFORMATION</h2>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                    <a href="#"><p><i class="fa fa-circle" aria-hidden="true"></i>Best sellers</p></a>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-contact">
+                        <h2>CONTACT US</h2>
+                        <a href="#"><p><i class="fa fa-map-marker" aria-hidden="true"></i>Rangpur , Bangladesh</p></a>
+                        <a href="#"><p><i class="fa fa-phone" aria-hidden="true"></i>+88 01761070282</p></a>
+                        <a href="#"><p><i class="fa fa-envelope" aria-hidden="true"></i>sshahriar458@gmail.com</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>  
+<script src="js/bootstrap.min.js"></script>  
+<script src="js/active.js"></script>  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
