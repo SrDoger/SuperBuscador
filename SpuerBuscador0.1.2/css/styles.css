@@ -160,3 +160,25 @@
   border-radius: 5px;
   height: 24px;
 }
+
+/**--------login and register------------**/
+.user{
+  text-align: center;
+  margin-top: 10px;
+}
+.user input{
+  height: 35px;
+  width: 350px;
+  border-radius: 10px;
+}
+.submit{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.submit input{
+  background-color: rgb(43, 156, 43);
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+}

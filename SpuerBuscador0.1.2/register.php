@@ -61,18 +61,11 @@ include("conexion.php");
                         <div class="login-box-header" style="background: rgba(255,255,255,0);">
                             <h4 style="color:rgb(139,139,139);margin-bottom:0px;font-weight:400;font-size:27px;">Register</h4>
                         </div>
-                        <form action="guardar.php" method="post" enctype="multipart/form-data">
-                            <div class="email-login" style="background: rgba(255,255,255,0);">
-                                <input type="text" name="nombre" class="form-control" style="background: rgba(0,0,0,0.5);" placeholder="Username">
-                                <div class="d-flex flex-row align-items-center login-box-seperator-container">
-                                    <div style="height:15px;"></div>
-                                </div>
-                                    <input type="password" name="pwd" class="password-input form-control" style="background: rgba(0,0,0,0.5);" placeholder="Password">
-                            </div>
+                        <form action="guardar.php" method="POST">
+                            <div class="user"><input type="text" name="nombre"></div>
+                            <div class="user"><input type="password" name="pwd"></div>
+                            <div class="submit"><input type="submit" value="enviar"></div>
                         </form>
-                        <div class="submit-row" style="margin-bottom:8px;padding-top:0px;">
-                            <input style="background-color:cadetblue" type="submit" class="btn btn-success mb-3" value="Registrar">  
-                        </div>
                         <div id="login-box-footer" style="padding:10px 20px;padding-bottom:23px;padding-top:18px;">
                             <p style="margin-bottom:0px;">Are you already register?<a id="register-link" href="login.php">login</a></p>
                         </div>

@@ -13,7 +13,7 @@ if (isset($_POST["nombre"])&&isset($pwd))
 	if (($envio->num_rows)>0){
 						session_start();
 						$_SESSION['nombre']=$_POST["nombre"];
-						header("Location:index-1.php");
+						header("Location:index.html");
 						echo "Has iniciado sesion";
 						}
 	else{
