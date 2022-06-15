@@ -10,7 +10,7 @@ include("conexion.php");
     <title>mainpage</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Login-Box-En.css">
 
@@ -61,13 +61,13 @@ include("conexion.php");
                         <div class="login-box-header" style="background: rgba(255,255,255,0);">
                             <h4 style="color:rgb(139,139,139);margin-bottom:0px;font-weight:400;font-size:27px;">Register</h4>
                         </div>
-                        <form action="guardarlogin.php" method="post" enctype="multipart/form-data">
+                        <form action="guardar.php" method="post" enctype="multipart/form-data">
                             <div class="email-login" style="background: rgba(255,255,255,0);">
-                                <input type="text" name="user" class="form-control" style="background: rgba(0,0,0,0.5);" placeholder="Username">
+                                <input type="text" name="nombre" class="form-control" style="background: rgba(0,0,0,0.5);" placeholder="Username">
                                 <div class="d-flex flex-row align-items-center login-box-seperator-container">
                                     <div style="height:15px;"></div>
                                 </div>
-                                    <input type="password" name="pass" class="password-input form-control" style="background: rgba(0,0,0,0.5);" placeholder="Password">
+                                    <input type="password" name="pwd" class="password-input form-control" style="background: rgba(0,0,0,0.5);" placeholder="Password">
                             </div>
                         </form>
                         <div class="submit-row" style="margin-bottom:8px;padding-top:0px;">

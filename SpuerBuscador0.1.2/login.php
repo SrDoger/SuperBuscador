@@ -10,7 +10,7 @@ include("conexion.php");
     <title>mainpage</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Login-Box-En.css">
 
@@ -62,12 +62,12 @@ include("conexion.php");
                     <h4 style="color:rgb(139,139,139);margin-bottom:0px;font-weight:400;font-size:27px;">Login</h4>
                 </div>
                 <div class="email-login" style="background: rgba(255,255,255,0);">
-                    <form method="POST" action="admin.php">
+                    <form method="POST" action="P_login.php">
                         <div class="form-group" style="background: rgba(255,255,255,0);">
-                            <input name="user" type="text" class="email-imput form-control" style="margin-top: 10px;background: rgba(0,0,0,0.5);"  placeholder="Username" minlength="2">
+                            <input name="nombre" type="text" class="email-imput form-control" style="margin-top: 10px;background: rgba(0,0,0,0.5);"  placeholder="Username" minlength="2">
                         </div>
                         <div class="form-group" style="background: rgba(255,255,255,0);">
-                            <input name="pass" type="password" class="password-input form-control" style="margin-top: 10px;background: rgba(0,0,0,0.5);" placeholder="Password" minlength="6">
+                            <input name="pwd" type="password" class="password-input form-control" style="margin-top: 10px;background: rgba(0,0,0,0.5);" placeholder="Password" minlength="6">
                         </div>
                         <button type="submit" class="btn btn-primary" style="width:100%;">Iniciar Sesion</button>                        
                     </form>            
