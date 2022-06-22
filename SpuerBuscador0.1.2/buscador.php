@@ -52,9 +52,17 @@
                       <li><a href="#">Paginas</a></li>
                     </ul>
                     <div class="searchbar">
-                        <form action="">
+                        <form action="buscador.php" method="POST">
                             <input type="text" class="search" name="element" id="">
-                            <input type="submit" class="boton" value="">
+                            <input type="text" name="mercadolibre"  style="display:none;" id="" value="on">
+                            <input type="text" name="ebay" style="display:none;" id="" value="on">
+                            <div id="options" style="display:none;">
+                                <input type="text" name="minPrice" placeholder="Precio Minimo" value="0">
+                                <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000">
+                            </div>
+                            <div>
+                                <input class="En" type="submit" value="Enviar">
+                            </div>
                         </form>
                     </div>
                     
