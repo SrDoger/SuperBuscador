@@ -18,13 +18,13 @@ if (isset($_POST['ebay'])) {
     array(
       array(
         'name' => 'MinPrice',
-        'value' => $_POST['minPrice'],
+        'value' => $_POST['minPrice']/200,
         'paramName' => 'Currency',
         'paramValue' => 'USD'
       ),
       array(
         'name' => 'MaxPrice',
-        'value' => $_POST['maxPrice'],
+        'value' => $_POST['maxPrice']/200,
         'paramName' => 'Currency',
         'paramValue' => 'USD'
       ),
@@ -135,7 +135,7 @@ if (isset($_POST['ebay'])) {
 
         $totalPage = $resp->paginationOutput->totalPages;
       }
-
+      $price *= 200;
       $results .= "
     <div id='containerEbay'>
       <img src=\"$pic\">
