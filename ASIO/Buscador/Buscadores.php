@@ -8,9 +8,30 @@
     <link rel="stylesheet" href="../Styles/mercadolibre.css">
     <title>Busqueda</title>
 </head>
+<style>
+    #cajaGrande{
+        display:flex;
+        flex-direction: row;
 
+        width:100%; 
+        margin-left:5%;
+        border:1px solid black;
+    }
+    #mercadolibre{
+        width: 40%;
+    }
+    .containerMerc{
+        min-width: 200px;
+    }
+    .ebay{
+        width: 40%;
+    }
+    .containerEbay{
+        min-width: 200px;
+    }
+</style>
 <body>
-    <div>
+    <div id="cajaGrande">
         <?php
         include 'Mercadolibre.php';
         include 'Ebay.php';

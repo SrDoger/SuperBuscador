@@ -23,13 +23,17 @@ if (isset($_POST['mercadolibre'])) {
                 echo '<div class="containerMerc">';
 
 
-                print $a["id"];
+                //print $a["id"];
                 echo '<br>';
-                echo $data['title'];
-                echo '<br>';
-                echo '<img class="imgPrincipal" style="height: 200px; width: 200px;" src="', $data['thumbnail'], '">';
-                echo '<br>';
-                echo '<p>Precio: ' . $data['price'], '$</p>';
+                
+                echo
+                    '<h2>'.$data['title'],'</h2>
+                    <br>
+                    <img class="imgPrincipal" src="', $data['thumbnail'], '">
+                    <br>
+                    <a href='.$data['permalink'],'>Link a Mercado Libre</a>
+                    <br>
+                    <p>Precio:' . $data['price'],'$</p>';
 
                 echo '<br>';
                 echo '<div class="imgSecundarias">';
