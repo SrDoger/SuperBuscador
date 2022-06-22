@@ -115,6 +115,10 @@
 .team{
   background-image: linear-gradient( whitesmoke, #252525 50%);
 }
+
+
+/**---------buscador--------------**/
+/**--------index-----------**/
 .search-bar{
   border: solid red 2px;
   width: 500px;
@@ -132,6 +136,7 @@
   width: 400px;
   height: 50px;
   border-radius: 20px;
+  text-align: center;
 }
 .search-bar .sutmit,.login{
   margin-left: 20px;margin-right: 20px;
@@ -139,8 +144,16 @@
   height: 25px;
   width: 75px;
 }
-
-/**---------buscador--------------**/
+.En{
+  background-color: greenyellow;
+  vertical-align: middle;
+  background-color: green;
+  height: 30px;
+  width: 60px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 /**search bar**/
 
 .searchbar{

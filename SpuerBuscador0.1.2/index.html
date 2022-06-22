@@ -63,15 +63,18 @@
 </div>
 <div class="search-bar">
     <h1>ALL SHOPS IN ONE</h3>
-        <form action="buscadores.php" method="post">
-            <input class="search" type="text" name="element" id="">
-            <input type="checkbox" name="ebay" id="" style="visibility: hidden;" value="on">
-            <input type="checkbox" name="mercadolibre"  id="" style="visibility: hidden;" value="on">
-            <div>
-                <input class="submit" type="submit" value="enviarr">
-                <input class="login" type="button">
+        <form action="buscador.php" method="post">
+            <input class="search" type="text" name="element" id=""><br>
+            <input type="text" name="mercadolibre"  style="display:none;" id="" value="on">
+            <input type="text" name="ebay" style="display:none;" id="" value="on">
+            <div id="options" style="display:none;">
+                <input type="text" name="minPrice" placeholder="Precio Minimo" value="0">
+                <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000">
             </div>
-        </form>
+            <div>
+                <input class="En" type="submit" value="Enviar">
+            </div>
+        </form> 
 </div>
 
 <section class="our_skill">
