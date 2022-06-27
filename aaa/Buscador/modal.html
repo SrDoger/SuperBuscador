@@ -1,0 +1,21 @@
+<input type="submit" value="enviar" id="myBtn">
+
+<script>
+    $('.openBtn').on('click',function(){
+        $('.modal-body').load('getContent.php?id=2',function(){
+            $('#myModal').modal({show:true});
+        });
+    });
+</script>
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <?php 
+                include ("../Loading.html");
+            ?>
+        </div>
+    </div>
+</div>
+
+class="btn btn-info btn-lg" id="myBtn"

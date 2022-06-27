@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<style>
+    /*KeyFrames --> Animaciones/transiciones*/
+
+    /*KeyFrame para el fondo*/
+    @keyframes animate {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+    /*KeyFrame para el texto*/
+    @keyframes stroke-offset{
+	    100% {stroke-dashoffset: -35%;}
+    }
+    /* KeyFrame del Logo */
+    @keyframes slide-in-blurred-top {
+        0% {
+            transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+            transform-origin: 50% 0%;
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0) scaleY(1) scaleX(1);
+            transform-origin: 50% 50%;
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    /*KeyFrame Texto de carga*/
+    @keyframes slide-in-blurred-bottom {
+        0% {
+            transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+            transform-origin: 50% 100%;
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0) scaleY(1) scaleX(1);
+            transform-origin: 50% 50%;
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    /*Cuerpo*/
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+    html, body{
+        height: 100%;
+        font-weight: 800;
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        background: #1b1ba0ce;
+        font-family: Arial;
+        box-sizing: border-box;
+    }
+    /*Logo*/
+    .img{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(233, 213, 134, 0.705);
+	    animation: slide-in-blurred-top 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        top: 200px;
+    }
+    /*Fondo animado*/
+    .circles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .circles li{
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 20s linear infinite;
+        bottom: -150px;
+        
+    }
+
+    .circles li:nth-child(1){
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2){
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(3){
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(4){
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 25s;
+    }
+
+    .circles li:nth-child(5){
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 5s;
+        animation-duration: 20s;
+    }
+
+    .circles li:nth-child(6){
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7){
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8){
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 40s;
+    }
+
+    .circles li:nth-child(9){
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 20s;
+    }
+
+    .circles li:nth-child(10){
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 15s;
+    }
+    /* Texto de carga */
+    .container {
+        display: flex;
+        /*   border:1px solid red; */
+        height: 100%;
+        align-items: center;
+        animation: slide-in-blurred-bottom 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        margin-left: 50px;
+    }
+
+    svg {
+        display: block;
+        font: 10.5em Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        width: 600px;
+        height: 300px;
+        margin-top: 200px;
+    }
+
+    .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 6% 29%;
+        stroke-width: 5px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 3.5s infinite linear;
+    }
+
+    .text-copy:nth-child(1){
+        stroke: rgb(46, 13, 37);
+        animation-delay: -1;
+    }
+
+    .text-copy:nth-child(2){
+        stroke: rgb(92, 0, 38);
+        animation-delay: -2s;
+    }
+
+    .text-copy:nth-child(3){
+        stroke: rgb(177, 17, 62);
+        animation-delay: -3s;
+    }
+
+    .text-copy:nth-child(4){
+        stroke: rgb(219, 21, 78);
+        animation-delay: -4s;
+    }
+
+    .text-copy:nth-child(5){
+        stroke: rgb(190, 135, 31);
+        animation-delay: -5s;
+    }
+</style>
+<body>
+<!--Logo-->    
+        <img src="Nahuel/Logo/CargaConRueda.gif" alt="" class="img">
+<!-- Divs para las animaciones de fondo -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+<!-- Texto de carga -->
+
+    <div class="container">
+        <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">Loading...</text>
+        </symbol>
+    
+        <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+        </svg>
+    </div>
+
+<!--
+        <img src="Nahuel/Movimiento/Sin-título-1.gif" alt="" class="Nahuelito">
+
+        <img src="Consorti-Para-Dariel/Para_Dariel.gif" alt="" class="Gonzalo">
+-->
+</body>
+</html>
