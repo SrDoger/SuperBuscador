@@ -148,5 +148,5 @@ if (isset($_POST['ebay'])) {
     }
   }
 
-  
+  echo "<div class='ebay'>$results</div>";
 }

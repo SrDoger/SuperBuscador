@@ -121,7 +121,6 @@
 /**---------buscador--------------**/
 /**--------index-----------**/
 .search-bar{
-  border: solid red 2px;
   width: 500px;
   height: 200px;
   position: absolute;
@@ -154,6 +153,10 @@
   border: none;
   border-radius: 5px;
   margin-top: 10px;
+}
+.filtro{
+  width: 70px;
+  text-align: center;
 }
 /**search bar**/
 
@@ -207,12 +210,14 @@
   background-color: antiquewhite;
 }
 #mercadolibre{
-  width: 40%;
+  width: 50%;
 }
 .containerMerc{
   min-width: 200px;
 }
-
+.ebay{
+  width: 50%;
+}
 .containerEbay{
   min-width: 200px;
 }

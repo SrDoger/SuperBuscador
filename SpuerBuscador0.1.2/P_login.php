@@ -8,7 +8,7 @@ echo $pwd_2;
 if (isset($_POST["nombre"])&&isset($pwd))
 {
 	include("conexion.php");
-	$query = "SELECT * FROM empleado WHERE nombre='".$_POST["nombre"]."' and pwd='".$pwd_2."'";
+	$query = "SELECT * FROM usuarios WHERE nombre='".$_POST["nombre"]."' and pwd='".$pwd_2."'";
 	$envio = $conn->query($query);
 	if (($envio->num_rows)>0){
 						session_start();

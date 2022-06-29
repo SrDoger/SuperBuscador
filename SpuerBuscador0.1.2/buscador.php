@@ -41,16 +41,16 @@
             <div class="row">
                 <div class="col-md-3">
                    <div class="logo">
-                    <a href="index.html"><h2>A.S.I.O</h2></a>
+                    <a href="index.html"><h2>A S I O</h2></a>
                    </div>
                 </div>
                 <div class="col-md-9">
-                    <ul class="nav navbar-nav nabar">
+                    <!--<ul class="nav navbar-nav nabar">
                       <li class="active"><a href="index.html">Inicio</a></li>
                       <li><a href="buscador.php">Tienda</a></li>
                       <li><a href="#">Caracteristicas</a></li>
                       <li><a href="#">Paginas</a></li>
-                    </ul>
+                    </ul>-->
                     <div class="searchbar">
                         <form action="buscador.php" method="POST">
                             <input type="text" class="search" name="element" id="">
