@@ -18,13 +18,13 @@ if (isset($_POST['ebay'])) {
     array(
       array(
         'name' => 'MinPrice',
-        'value' => $_POST['minPrice']/200,
+        'value' => $_POST['minPrice'] / 200,
         'paramName' => 'Currency',
         'paramValue' => 'USD'
       ),
       array(
         'name' => 'MaxPrice',
-        'value' => $_POST['maxPrice']/200,
+        'value' => $_POST['maxPrice'] / 200,
         'paramName' => 'Currency',
         'paramValue' => 'USD'
       ),
@@ -138,14 +138,15 @@ if (isset($_POST['ebay'])) {
       $price *= 200;
       $results .= "
     <div id='containerEbay'>
-      <img src=\"$pic\">
-      <h2><a href='$link\' target='blank'>$title</a></h2>
-      <h5>$subtitle</h5>
-      <h3>Price $$price</h3>
+      <h2>$title</h2>
+      <img src=\"$pic\"><br>
+      <a href='$link\'>Link a Ebay</a>
+      <p>$subtitle</p>
+      <p>Price $$price</p>
       <hr>
     </div>";
     }
   }
 
-echo "<div class='ebay'>$results</div>";
+  echo "<div class='ebay'>$results</div>";
 }

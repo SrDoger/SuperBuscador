@@ -17,7 +17,7 @@ include("conexion.php");
 
 </head>
 
-<body>
+<body class="bode">
 <header>
     <section class="header-top">
         <div class="container">

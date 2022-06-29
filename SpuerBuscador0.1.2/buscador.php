@@ -10,6 +10,28 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<style>
+    #cajaGrande{
+        display:flex;
+        flex-direction: row;
+
+        width:100%; 
+        margin-left:5%;
+        border:1px solid black;
+    }
+    #mercadolibre{
+        width: 40%;
+    }
+    .containerMerc{
+        min-width: 200px;
+    }
+    .ebay{
+        width: 40%;
+    }
+    .containerEbay{
+        min-width: 200px;
+    }
+</style>
 <body class="bode">
 <header>
     <section class="header-top">
@@ -72,10 +94,13 @@
     </section>
 </header>
 <div class="cabeza" style="height: auto !important;">
-    <?php
+    <div>
+      <?php
         include 'Buscador/Mercadolibre.php';
         include 'Buscador/Ebay.php';
-    ?>
+     ?>  
+    </div>
+    
 </div>
 <footer>
     <div class="footer_top">
