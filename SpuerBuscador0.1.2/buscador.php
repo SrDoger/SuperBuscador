@@ -51,7 +51,7 @@
                       <li><a href="#">Caracteristicas</a></li>
                       <li><a href="#">Paginas</a></li>
                     </ul>-->
-                    <div class="searchbar">
+                    <!--<div class="searchbar">
                         <form action="buscador.php" method="POST">
                             <input type="text" class="search" name="element" id="">
                             <input type="text" name="mercadolibre"  style="display:none;" id="" value="on">
@@ -64,7 +64,7 @@
                                 <input class="En" type="submit" value="Enviar">
                             </div>
                         </form>
-                    </div>
+                    </div>-->
                     
                 </div>
             </div>

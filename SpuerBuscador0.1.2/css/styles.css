@@ -76,10 +76,10 @@
   top: 45%;
 }
 .bode{
-  background-image: url(../img/nis/fondoboceto\.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../img/nis/idea2.png);
+  background-size: 300px;
   background-attachment: fixed;
+  background-color: #424242;
 }
 .way {
   position: absolute;
@@ -105,7 +105,7 @@
 
 }
 .cont{
-  background-color: whitesmoke;
+  background-image: linear-gradient(silver, #424242);
 }
 .our_skill{
   background-color: whitesmoke;
@@ -121,12 +121,14 @@
 /**---------buscador--------------**/
 /**--------index-----------**/
 .search-bar{
-  width: 500px;
+  border-radius: 50px;
+  width: 450px;
   height: 200px;
   position: absolute;
   top: 400px;
   left: 350px;
   text-align: center;
+  background-color: rgba(245, 245, 245, 0.65);
 }
 .search-bar h1{
   color: red;
