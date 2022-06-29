@@ -35,8 +35,8 @@ include("conexion.php");
                 </div>
                 <div class="col-md-4">
                    <div class="a-right">
-                        <a href="login.php"><p><span><i class="fa fa-user"></i></span>Login</p></a>
-                        <a href="register.php"><p><span><i class="fa fa-pencil"></i></span>Register</p></a>
+                        <!--<a href="login.php"><p><span><i class="fa fa-user"></i></span>Login</p></a>
+                        <a href="register.php"><p><span><i class="fa fa-pencil"></i></span>Register</p></a>-->
                    </div>
                 </div>
             </div>
