@@ -48,7 +48,7 @@ include("conexion.php");
             <div class="row">
                 <div class="col-md-3">
                    <div class="logo">
-                    <a href="#"><h2>A.S.I.O</h2></a>
+                    <a href="index.html"><h2>A.S.I.O</h2></a>
                    </div>
                 </div>
             </div>
