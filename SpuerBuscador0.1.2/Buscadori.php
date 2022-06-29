@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Busqueda</title>
 </head>
-
 <body>
     <div>
         <?php

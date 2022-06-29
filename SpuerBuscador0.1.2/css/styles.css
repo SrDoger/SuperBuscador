@@ -64,6 +64,7 @@
   background-position: center;
   width: 100%;
   height: 750px;
+  text-align: center;
 }
 .cabeza h3 {
   color: #fff;
@@ -194,4 +195,29 @@
   height: 30px;
   width: 100px;
   border-radius: 10px;
+}
+/**-------vista de producos-------**/
+#cajaGrande{
+  display:flex;
+  border:1px solid black;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1000px;
+  background-color: antiquewhite;
+}
+#mercadolibre{
+  width: 40%;
+}
+.containerMerc{
+  min-width: 200px;
+}
+
+.containerEbay{
+  min-width: 200px;
+}
+.filter{
+  background-color: white;
+  width: 200px;
+  margin-left: 10px;
 }
