@@ -21,7 +21,6 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul style="margin: 0 !important">
-                        <li><a href="account.php">Account</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">

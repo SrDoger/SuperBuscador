@@ -185,7 +185,7 @@
 }
 
 /**--------login and register------------**/
-.user{
+.user, .user input{
   text-align: center;
   margin-top: 10px;
 }
@@ -234,22 +234,34 @@
 }
 
 /*--------Acconut------*/
+
 .dobe{
   border: black 2px solid;
   border-radius: 20px;
   box-shadow: -15px 10px 5px   #000000;
   background-color: whitesmoke;
-  width: auto;
-  position: absolute;
+  width: 50%;
+  position: relative;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  height: auto;
+  transform: translate(-50%,-0%);
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .inerdobe{
   background-color: whitesmoke;
   margin: 20px;
   width: auto;
 }
+.change{
+  display: grid;
+  place-items: center;
+  border: black solid 1px;
+  background-color: azure;
+  border-radius: 15px;
+}
+
 .inerdobe input{
   display: flex;
   width: 350px;
@@ -259,7 +271,25 @@
 .inerdobe label{
   margin-top: 10px;
 }
-
+.imgperf{
+  display: inline-flex;
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.imgperf h1{
+  text-align: center;
+}
+#imgperf{
+  border-radius: 50%;
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+}
+.password{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 
 
 /*--modal--*/

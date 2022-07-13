@@ -19,36 +19,13 @@ include("conexion.php");
 
 <body class="bode">
 <header>
-    <section class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="#">Account</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon">
-                       <a href="#"><i class="fa fa-facebook"></i></a>
-                       <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="a-right">
-                        <!--<a href="login.php"><p><span><i class="fa fa-user"></i></span>Login</p></a>
-                        <a href="register.php"><p><span><i class="fa fa-pencil"></i></span>Register</p></a>-->
-                   </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <div class="clear"></div>
-    <section class="header">
+    <section class="cont header">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                    <div class="logo">
-                    <a href="index.html"><h2>A.S.I.O</h2></a>
+                    <a href="index.php"><h2 style="color: white !important;">A.S.I.O</h2></a>
                    </div>
                 </div>
             </div>
