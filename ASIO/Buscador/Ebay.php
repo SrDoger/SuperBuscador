@@ -30,7 +30,7 @@ if (isset($_POST['ebay'])) {
       ),
       array(
         'name' => 'FreeShippingOnly',
-        'value' => 'true',
+        'value' => 'false',
         'paramName' => '',
         'paramValue' => ''
       ),
@@ -114,6 +114,7 @@ if (isset($_POST['ebay'])) {
       $pic   = $item->galleryURL;
       $link  = $item->viewItemURL;
       $title = $item->title;
+      $itemid = $item->itemId;
       $subtitle = $item->subtitle;
       $paymentMethod = $item->paymentMethod;
 
@@ -137,8 +138,14 @@ if (isset($_POST['ebay'])) {
       }
       $price *= 200;
       $results .= "
+      
     <div id='containerEbay'>
-      <h2>$title</h2>
+    <form action='EbayProduct.php' method='post'>
+      <input type='submit' value='producto'>
+      <input type='text' name='element' value='$itemid' hidden>
+      </form>
+      
+    <h2>$title</h2>
       <img src=\"$pic\"><br>
       <a href='$link\'>Link a Ebay</a>
       <p>$subtitle</p>

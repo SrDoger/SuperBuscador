@@ -27,7 +27,13 @@ if (isset($_POST['mercadolibre'])) {
                 echo '<br>';
                 
                 echo
-                    '<h2>'.$data['title'],'</h2>
+                    '
+                    <form action="MerclibreProduct.php" method="post">
+                        <input type="text" name="element" value="'.$data['id'],'" hidden>
+                        <input type="submit" value="producto">
+                    </form>
+                    
+                    <h2>'.$data['title'],'</h2>
                     <br>
                     <img class="imgPrincipal" src="', $data['thumbnail'], '">
                     <br>
