@@ -63,8 +63,7 @@
   /**background-attachment: fixed;**/
   background-position: center;
   width: 100%;
-  height: 750px;
-  text-align: center;
+  height: 75vh;
 }
 .cabeza h3 {
   color: #fff;
@@ -140,11 +139,16 @@
   border-radius: 20px;
   text-align: center;
 }
-.search-bar .sutmit,.login{
+.search-bar .sutmit{
   margin-left: 20px;margin-right: 20px;
   margin-top: 10px;
   height: 25px;
   width: 75px;
+}
+
+.accon{
+  display: inline;
+  margin-left: 5px;
 }
 .En{
   background-color: greenyellow;
@@ -228,3 +232,34 @@
   width: 200px;
   margin-left: 10px;
 }
+
+/*--------Acconut------*/
+.dobe{
+  border: black 2px solid;
+  border-radius: 20px;
+  box-shadow: -15px 10px 5px   #000000;
+  background-color: whitesmoke;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.inerdobe{
+  background-color: whitesmoke;
+  margin: 20px;
+  width: auto;
+}
+.inerdobe input{
+  display: flex;
+  width: 350px;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+.inerdobe label{
+  margin-top: 10px;
+}
+
+
+
+/*--modal--*/
