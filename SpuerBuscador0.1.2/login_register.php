@@ -1,3 +1,4 @@
+<?php include("conexion.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,25 +31,25 @@
             <div class="login_box" id="login">
                 <div class="iner">
                     <h1>Login</h1>
-                    <form class="ask" action="P_login.php" method="post">
+                    <form class="ask" action="P_login.php" method="POST">
                         <label for="user">Nombre de Usuario</label>
-                        <input class="user" id="user" type="text" value="">
+                        <input class="user" name="nombre" type="text">
                         <label for="pass">Contraseña</label>
-                        <input class="user" id="pass" type="text" value="">
+                        <input class="user" name="pwd" type="password">
                         <input type="submit" id="boton" value="Log-in">
+                        <a href="#" class="register🖊">Register</a>
                     </form>
-                    <a href="#" class="register🖊">Register</a>
                 </div>
             </div>
             <div class="login_box show" id="register">
                 <div class="iner">
                     <h1>Register</h1>
-                    <form class="ask" action="guardar.php" method="post">
+                    <form class="ask" action="guardar.php" method="POST">
                         <label for="user">Nombre de Usuario</label>
                         <input class="user" name="nombre" id="user" type="text" value="">
                         <label for="pass">Contraseña</label>
-                        <input class="user" name="pwd" id="pass" type="text" value="">
-                        <input type="submit" id="boton" value="Log-in">
+                        <input class="user" name="pwd" id="pass" type="password" value="">
+                        <input type="submit" id="boton" value="Register">
                     </form>
                     <a href="#" class="Log-in">Log-in</a>
                 </div>

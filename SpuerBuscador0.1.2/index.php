@@ -37,8 +37,7 @@
                                 <a class="accon" href="logout.php"><p><span><i class="fa fa-sign-out"></i></span>out</p></a>
                             <?php
                         } else {?>
-                            <a class="accon" href="login.php"><p><span><i class="fa fa-user"></i></span>Login</p></a>
-                            <a class="accon" href="register.php"><p><span><i class="fa fa-pencil"></i></span>Register</p></a>
+                            <a class="accon" href="login_register.php"><p><span><i class="fa fa-user"></i></span>Login</p></a>
                         <?php
                     }?>
                    </div>

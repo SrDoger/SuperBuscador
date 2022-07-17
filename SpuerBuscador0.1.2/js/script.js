@@ -16,3 +16,4 @@ openr.addEventListener('click',(e)=>{
   register.classList.add('show');
 });
 
+

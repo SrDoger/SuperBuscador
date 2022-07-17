@@ -8,7 +8,7 @@
     position: absolute;
     top: 250px;
     left: 50%;
-    transform: translate(-50%);
+    margin-left: -250px;
     border: #f39c12 solid 2px;
     border-radius: 20px;
 
@@ -30,7 +30,6 @@
     display: grid;
     width: 350px;
     padding-bottom: 20px;
-    border: red solid 2px;
 }
 .ask input , label{
     text-align: center;
@@ -51,8 +50,9 @@
     display: none;
 }
 #boton{
-    transform: translate(-50%);
-    margin-left: 50%;
+    /* transform: translate(-50%); */
+    /* margin-left: 50%; */
+    display: inline-block;
     margin-top: 20px;
     width: 100px;
     height: auto;
@@ -60,19 +60,26 @@
     text-align: center;
     color: white;
 }
-.log_container{
+.Log-in , .register🖊{
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+    background-color: #f39c12;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
 }
-
 #login{
-
+    transition: transform 1s;
 }
 #register{
+    transition: transform 1s;
 
 }
-.showl{
-    transform: translateY(-700px);
-    transition: transform 2s;
-}
-.showr{
-    
+.show{
+    z-index: 1;
+    transform: rotateY(90deg);
+    transition: transform 0.5s !important;
 }

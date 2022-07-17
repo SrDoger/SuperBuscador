@@ -7,6 +7,6 @@
 //$consulta_sql = "INSERT INTO empleado (nombre, pwd) VALUES ('".$nombre."', '".$pwd."')";
   $sql = "INSERT INTO usuarios (nombre, pwd) VALUES ('".$nombre."','".$pwd."')";
   $envio_consulta_sql = $conn->query($sql);
-  header("Location:login.php");
+  header("Location:login_register.php");
 
  ?>

@@ -16,7 +16,7 @@ if (isset($_POST["nombre"])&&isset($pwd))
 						echo "Has iniciado sesion";
 						}
 	else{
-    echo "<p>La cagaste wachin</p>";
+    header("location:login_register.php");
   }
 }
 /**recive informacio que invio en el formulario mediante la  */
