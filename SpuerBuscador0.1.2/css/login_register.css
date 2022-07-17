@@ -6,30 +6,31 @@
     height: auto;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 250px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     border: #f39c12 solid 2px;
     border-radius: 20px;
 
 }
 .iner{
-    margin-bottom: 20px;
-}
-.iner , .iner form{
     display: grid;
     place-content: center;
     width: 100%;
     height: 100%;
 }
+
 .iner h1{
     color: white;
     text-align: center;
     display: block;
     padding-bottom: 20px;
 }
-.iner form{
+.ask{
+    display: grid;
+    width: 350px;
     padding-bottom: 20px;
+    border: red solid 2px;
 }
 .ask input , label{
     text-align: center;
@@ -41,33 +42,37 @@
     font-weight: 100;
 }
 .ask input{
-    max-width: 350px !important;
     height: 35px;
-    width: 50%;
+    width: auto;
     border-radius: 10px;
     border: none;
-}
-.submit{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.submit input{
-    background-color: rgb(43, 156, 43);
-    height: 30px;
-    width: 100px;
-    border-radius: 10px;
 }
 .logview{
     display: none;
 }
-.boton{
-    max-width: 100px;
-    width: 100%;
+#boton{
+    transform: translate(-50%);
+    margin-left: 50%;
+    margin-top: 20px;
+    width: 100px;
     height: auto;
     background-color: #f39c12;
     text-align: center;
-}
-.boton a{
     color: white;
+}
+.log_container{
+}
+
+#login{
+
+}
+#register{
+
+}
+.showl{
+    transform: translateY(-700px);
+    transition: transform 2s;
+}
+.showr{
+    
 }
