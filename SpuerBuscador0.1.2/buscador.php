@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-3">
                    <div class="logo">
-                    <a href="index.html"><h2 style="color: white !important;">A S I O</h2></a>
+                    <a href="index.php"><h2 style="color: white !important;">A S I O</h2></a>
                    </div>
                 </div>
                 <div class="col-md-9">
@@ -75,7 +75,7 @@
     <div id="cajaGrande">
       <?php
         include 'Buscador/Mercadolibre.php';
-        include 'Buscador/Ebay.php';
+        // include 'Buscador/Ebay.php';
      ?>  
     </div>
     

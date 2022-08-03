@@ -15,7 +15,7 @@ if (isset($_POST['mercadolibre'])) {
         foreach ($i as $a["id"]) {
             $mlid = $a["id"];
             $data = json_decode(file_get_contents('https://api.mercadolibre.com/items/' . $mlid), true);
-            if ($valor >= 10) {
+            if ($valor >= 12) {
                 break;
             }
             if ($_POST['maxPrice'] >= $data['price'] && $_POST['minPrice'] <= $data['price']) {
@@ -24,18 +24,13 @@ if (isset($_POST['mercadolibre'])) {
 
 
                 //print $a["id"];
-                echo '<br>';
                 
                 echo
                     '<h2>'.$data['title'],'</h2>
-                    <br>
                     <img class="imgPrincipal" src="', $data['thumbnail'], '">
-                    <br>
                     <a href='.$data['permalink'],'>Link a Mercado Libre</a>
-                    <br>
                     <p>Precio:' . $data['price'],'$</p>';
 
-                echo '<br>';
                 echo '<div class="imgSecundarias">';
 
                 echo '</div>';

@@ -106,6 +106,7 @@
 }
 .our_skill{
   background-color: whitesmoke;
+  
 }
 .features{
   background-color: whitesmoke;
@@ -184,31 +185,51 @@
 
 /**-------vista de producos-------**/
 #cajaGrande{
-  display:flex;
   border:1px solid black;
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  width: 1000px;
+  width: 100px;
   background-color: antiquewhite;
 }
 #mercadolibre{
-  width: 50%;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
 }
+
 .containerMerc{
-  min-width: 200px;
+  text-align: center;
+  /* display: grid; */
+  /* place-items: center; */
+  background-color: white;
+  border: 1px black solid;
 }
-.ebay{
-  width: 50%;
+.containerMerc h2{
+
 }
-.containerEbay{
-  min-width: 200px;
+.containerMerc a{
+}
+.containerMerc p{
+}
+
+.imgPrincipal{
+  border: red 2px solid;
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
 }
 .filter{
   background-color: white;
   width: 200px;
   margin-left: 10px;
 }
+
+
+
+
+
 
 /*--------Acconut------*/
 
