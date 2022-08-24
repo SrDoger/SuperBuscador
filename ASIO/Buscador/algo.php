@@ -1,5 +1,35 @@
 <?php
-require('C:\xampp\htdocs\SuperBuscador\fpdf184\fpdf.php');
+require('C:\xampp\htdocs\SuperBuscador-Buscador\fpdf184\fpdf.php');
+
+class SQL{
+    public function ensamblerList() {
+        
+        $conn = new mysql("localhost", "root", "". "test");
+
+        $sql = "select idproduct from carrito where user ='12'";
+        $returnValue = array();
+    
+        $result = $this->conn->query($sql); // makes the connection and executes the sql
+
+        
+        foreach ($result as $id) {
+            try {
+                $valor = $id.parseInt();
+            } catch (\Throwable $th) {
+                $valor = $id;
+            }
+            if(gettype($valor) == String){
+                ml();
+            }
+            else{
+                ebay();
+            }    
+        }
+    }    
+}
+function assemblerFile(){
+    $_POST
+}
 class PDF extends FPDF
 {
 
