@@ -1,18 +1,21 @@
 <?php
-require('C:\xampp\htdocs\SuperBuscador-Buscador\fpdf184\fpdf.php');
+require('C:\xampp\htdocs\SuperBuscador-Buscador\ASIO\fpdf184\fpdf.php');
 
 class SQL{
     public function ensamblerList() {
         
         $conn = new mysql("localhost", "root", "". "test");
 
-        $sql = "select idproduct from carrito where user ='12'";
+        $sql = "select idproduct from carrito where user ='".$usuario,"'";
         $returnValue = array();
     
         $result = $this->conn->query($sql); // makes the connection and executes the sql
 
+        while($archivo = $result->fetch_assoc()){
+            $listadeproductor = $archivo["idproducto"];
+        }
         
-        foreach ($result as $id) {
+        foreach ($listadeproductor as $id) {
             try {
                 $valor = $id.parseInt();
             } catch (\Throwable $th) {
@@ -28,7 +31,7 @@ class SQL{
     }    
 }
 function assemblerFile(){
-    $_POST
+    //$_POST
 }
 class PDF extends FPDF
 {
