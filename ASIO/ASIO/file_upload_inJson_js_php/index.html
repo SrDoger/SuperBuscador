@@ -1,0 +1,183 @@
+<!--accept="application/pdf"-->
+<!DOCTYPE html> 
+<html>
+<head>
+ <title>File Upload Using AJAX & PHP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+#form{
+margin-top: 10% !important; 
+border: 2px solid #00c243;
+width: 50%;
+margin: auto;
+background-color: white;
+}
+#view{
+  margin: auto;
+width: 120px;
+border: 2px solid;
+height: 120px;   
+}
+     h2{
+text-align: center; 
+background-color: #00c130; 
+color: white;
+margin-bottom: 5px;
+}
+body{
+background-color: #d7f9ff !important;
+}
+#Re_Try{
+width: auto;
+color: #fff;
+font-size: 9px;
+background: #b90336;
+border-radius: 80px;
+height: 33px;
+border: 0px; 
+display:none;
+margin-right: -80px;
+margin-bottom: -15px;
+position: relative;
+} 
+input[type=text]{
+text-align: center;
+}
+img{
+width:115px; 
+height: 115px; 
+margin-top: 1px;
+}
+h4{
+text-align: center; 
+background-color: #00c130; 
+color: white;
+margin-bottom: 5px;
+padding: 5px;
+}
+body{
+background-color: #d7f9ff !important;
+}
+</style>
+</head>
+  
+
+<body>
+<div class="container">
+
+<form id="form" action="#" method="post" enctype="multipart/form-data">
+<h4>Upload File Using AJAX & PHP</h4>
+<table width="100%" height="100" align="center">
+    <tr>
+        <td align="center"><div id="msg"></div></td>
+    </tr>
+ <tr>
+    <td align="center">
+
+    <input type="button" value="Re-Try" id="Re_Try">
+    <div id="view"></div>
+
+     <table width="100%" border="0">
+         <tr>
+             <td><input type="text" class="form-control" id="filename" name="filename" value="Name" readonly="true"></td>
+             <td><input type="text" class="form-control" id="filesize" name="filesize" value="Size" readonly="true"></td>
+             <td><input type="text" class="form-control" id="filetype" name="filetype" value="Type" readonly="true"></td>
+         </tr>
+     </table>
+    <div class="custom-file"  style="margin-top: 10px;">
+    <input type="file" class="custom-file-input" id="uploadfile" name="uploadfile">
+    <label class="custom-file-label" id="file_name">Choose file</label>
+     </div>
+     </td>
+
+
+ </tr>
+     <tr>
+          <td><input type="button" name="Upload File" value="Upload File" id="upload_btl" class="btn btn-primary btn-block" style="margin-top: 10px;"></td>
+     </tr>
+</table>
+</form>
+
+</div>
+<script>
+$("#uploadfile").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings("#file_name").addClass("selected").html(fileName);
+});
+
+
+document.getElementById("upload_btl").onclick = function(){
+var image = document.getElementById("uploadfile").value;
+var checkimg = image.toLowerCase();
+var filedetails = document.getElementById("uploadfile"); 
+var size = parseFloat(filedetails.files[0].size / (1024 * 1024)).toFixed(2); 
+//var filetype =  filedetails.files[0].type;
+//var filetype =  filename.split('.').pop();
+     if(image!='') {
+         if (!checkimg.match(/(\.jpg|\.png|\.JPG|\.PNG|\.jpeg|\.JPEG)$/)){ 
+              alert("Please Select jpg,png File");
+              document.getElementById("uploadfile").value=""; 
+              document.getElementById("file_name").innerHTML="Choose file"; exit;
+           }else if(size >  2) {
+            alert("Please select size less than 2 MB");
+            document.getElementById("uploadfile").value=""; 
+            document.getElementById("file_name").innerHTML="Choose file"; exit;
+            } else {
+               uploadFile();
+               document.getElementById("uploadfile").value=""; 
+               document.getElementById("file_name").innerHTML="Choose file";
+            }
+      }
+}
+
+
+
+function uploadFile() {
+document.getElementById("view").innerHTML="<img src='loader.gif'/>";  
+document.getElementById("filename").value= "";
+document.getElementById("filesize").value= "";
+document.getElementById("filetype").value= "";
+document.getElementById("view").innerHTML= "";
+document.getElementById("msg").innerHTML= "";     
+let formData = new FormData();
+      formData.append("uploadfile", uploadfile.files[0]);
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "upload.php", true);
+      xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+          var responseJsonObj = JSON.parse(this.responseText);
+           if (responseJsonObj.statusapi=="success"){
+            document.getElementById("filename").value= responseJsonObj.filename;
+            document.getElementById("filesize").value= responseJsonObj.filesize;
+            document.getElementById("filetype").value= responseJsonObj.filetype;
+            document.getElementById("view").innerHTML= "<img src='upload/"+responseJsonObj.filename+"'>";
+            document.getElementById("msg").innerHTML= "<span style='color:green;'>"+responseJsonObj.message+"</span>";
+                       } else if (responseJsonObj.statusapi=="Failed"){
+            document.getElementById("filename").value= "";
+            document.getElementById("filesize").value= "";
+            document.getElementById("filetype").value= "";
+            document.getElementById("view").innerHTML= "<span style='color:red;'>"+responseJsonObj.statusapi+"</span>";
+            document.getElementById("msg").innerHTML= "<span style='color:red;'>"+responseJsonObj.message+"</span>";
+                       }
+          document.getElementById("Re_Try").style.display="block";
+         }
+      };
+      xhttp.send(formData);
+  }
+ 
+document.getElementById("Re_Try").onclick = function(){
+document.getElementById("Re_Try").style.display="none";
+document.getElementById("view").innerHTML="";
+document.getElementById("uploadfile").value="";
+document.getElementById("filename").value= "Name";
+document.getElementById("filesize").value= "Size";
+document.getElementById("filetype").value= "Type";
+document.getElementById("view").innerHTML= "";
+document.getElementById("msg").innerHTML= "";
+  }
+</script>
+</body>
+</html>
