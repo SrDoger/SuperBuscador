@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2022 a las 21:04:52
+-- Tiempo de generación: 12-10-2022 a las 22:41:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.4
 
@@ -43,6 +43,54 @@ CREATE TABLE `carrito` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `carrito`
+--
+
+INSERT INTO `carrito` (`idProducto`, `id_usuario`) VALUES
+('sdafas', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('', 12),
+('\"id\"', 12),
+('\"id\"', 12),
+('\"id\"', 12),
+('\"id\"', 12),
+('\"id\"', 12),
+('\"id\"', 12),
+('id', 12),
+('id', 12),
+('id', 12),
+('id', 12),
+('id', 12),
+('id', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('MLA1143745839', 12),
+('', 12),
+('MLA929070256', 12);
+
 -- --------------------------------------------------------
 
 --
@@ -65,6 +113,14 @@ CREATE TABLE `usuarios` (
   `nombre` text NOT NULL,
   `pwd` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `pwd`) VALUES
+(12, 'asdasd', '123456'),
+(412, 'jose', '123456');
 
 --
 -- Índices para tablas volcadas
@@ -90,7 +146,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
 
 --
 -- Restricciones para tablas volcadas
