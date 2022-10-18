@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.3.0-dev+20221012.f1f31c313d
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2022 a las 22:41:21
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.4
+-- Tiempo de generación: 17-10-2022 a las 18:21:40
+-- Versión del servidor: 10.1.35-MariaDB
+-- Versión de PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -110,6 +111,7 @@ CREATE TABLE `historial` (
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
+  `mail` varchar(30) NOT NULL,
   `nombre` text NOT NULL,
   `pwd` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -118,9 +120,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `pwd`) VALUES
-(12, 'asdasd', '123456'),
-(412, 'jose', '123456');
+INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `pwd`) VALUES
+(12, 'mail@gmail.com', 'asdasd', '123456'),
+(412, '', 'jose', '123456');
 
 --
 -- Índices para tablas volcadas
