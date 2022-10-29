@@ -1,19 +1,28 @@
 <?php
 
 require_once("../classes/Conexion.php");
-$register = new usuario();
+$user = new usuario();
 
 switch ($_POST["type"]) {
 
     case "register":
-        $register->register($_POST["mail"], $_POST["user"], $_POST["pwd"]);
+        $user->register($_POST["mail"], $_POST["user"], $_POST["pwd"]);
         break;
     case "login":
-        $register->login($_POST["mail"], $_POST["pwd"]);
+        $user->login($_POST["mail"], $_POST["pwd"]);
         break;
     case "out":
-        $register->logout();
+        $user->logout();
         break;
+    case "delete":
+        $user->delete($pwd);
+    case "userDelete":
+        $user->userDelete($id);
+        break;
+    case "userChangePWD":
+        $user->userChangePWD($id, $pwd);
+        break;
+
     default:
-        header("Location:error.php");
+        header("Location:error.php?error=form");
 }

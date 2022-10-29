@@ -30,15 +30,16 @@ class usuario extends BDD
 
       $query = "SELECT * FROM usuarios WHERE mail='" . $mail . "' and pwd='" . md5($pwd) . "'";
       $envio = $this->conn->query($query);
-
+      print_r($envio->num_rows);
       if (($envio->num_rows) > 0) {
         $row = $envio->fetch_assoc();
         $session->setvalor("nombre", $row["nombre"]);
         $session->setvalor("id", $row["id"]);
+        $session->setvalor("admin", $row["admin"]);
         header("Location:../index.php");
       } else {
         $session->end();
-        header("location:../error.php");
+        header("location:../error.php?error=login");
       }
     }
   }
@@ -61,8 +62,7 @@ class usuario extends BDD
       $result = $this->conn->query($query);
 
       if ($result->num_rows > 0) {
-        header("Location:../error.html"); // no pueden existir 2 cuentas con mismo mail
-        $condition = false;
+        $condition = false; // no pueden existir 2 cuentas con mismo mail
       }
       if ($condition === true) {
         $query = "INSERT INTO usuarios(id,mail,nombre,pwd) VALUES (NULL,'" . $mail . "','" . $nombre . "','" . md5($pwd) . "')";
@@ -70,16 +70,38 @@ class usuario extends BDD
         $this->conn->query($query);  //se sube a la BDD
         header("Location:../forms/login.php");
       } else {
-        header("Location:../error.php");
+        header("Location:../error.php?error=registerExists");
       }
     }
   }
-  function delete($mail)
+  function delete($pwd)
   {
     $session = new session();
-    if($_SESSION["SuperUser"] === TRUE )
-    $query = "DELETE FROM usuarios WHERE mail='".$mail."'";
-    $this->conn->query($query);
+    if (md5($pwd) == $_SESSION["pwd"]) {
+      $query = "DELETE FROM usuarios WHERE id='" . $_SESSION["id"] . "'";
+      $this->conn->query($query);
+    } else {
+      header("location:../error.php");
+    }
+  }
+  ////////////////////////////////////////////////////////////////////////////////
+  //                         Funciones Administradoras
+  function userDelete($id)
+  {
+    if ($_SESSION["admin"] == 1) {
+      $session = new session();
+      $query = "DELETE FROM usuarios WHERE id='" . $_SESSION["id"] . "'";
+      $this->conn->query($query);
+      header("location:../admin/administrador.php");
+    }
+  }
+  function userChangePWD($id, $pwd)
+  {
+    if ($_SESSION["admin"] == 1) {
+      $query = "UPDATE usuarios SET pwd='" . md5($pwd) . "' WHERE id='" . $id . "'";
+      $this->conn->query($query);
+      header("location:../admin/administrador.php");
+    }
   }
 }
 class Carrito extends BDD
