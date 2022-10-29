@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 18:21:40
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 7.2.9
+-- Host: 127.0.0.1
+-- Generation Time: Oct 29, 2022 at 04:26 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `empresa`
+-- Database: `empresa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `busqueda`
+-- Table structure for table `busqueda`
 --
 
 CREATE TABLE `busqueda` (
@@ -36,7 +35,7 @@ CREATE TABLE `busqueda` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carrito`
+-- Table structure for table `carrito`
 --
 
 CREATE TABLE `carrito` (
@@ -45,7 +44,7 @@ CREATE TABLE `carrito` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `carrito`
+-- Dumping data for table `carrito`
 --
 
 INSERT INTO `carrito` (`idProducto`, `id_usuario`) VALUES
@@ -95,7 +94,7 @@ INSERT INTO `carrito` (`idProducto`, `id_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `historial`
+-- Table structure for table `historial`
 --
 
 CREATE TABLE `historial` (
@@ -106,56 +105,60 @@ CREATE TABLE `historial` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `mail` varchar(30) NOT NULL,
   `nombre` text NOT NULL,
-  `pwd` text NOT NULL
+  `pwd` text NOT NULL,
+  `admin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `pwd`) VALUES
-(12, 'mail@gmail.com', 'asdasd', '123456'),
-(412, '', 'jose', '123456');
+INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `pwd`, `admin`) VALUES
+(12, 'mail@gmail.com', 'asdasd', '123456', NULL),
+(412, '', 'jose', '123456', NULL),
+(413, 'allanjmontero@gmail.com', 'Sr_Doger', '555a9aae3c2c23f0f9f911c8230c4238', 1),
+(414, 'sexo@gmail.com', 'Sr_Doger', '81dc9bdb52d04dc20036dbd8313ed055', 1),
+(415, 'sfdfsd@gmail.com', 'tuviejaentangfa', '202cb962ac59075b964b07152d234b70', NULL);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `carrito`
+-- Indexes for table `carrito`
 --
 ALTER TABLE `carrito`
   ADD KEY `relacion_carrito_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=416;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `carrito`
+-- Constraints for table `carrito`
 --
 ALTER TABLE `carrito`
   ADD CONSTRAINT `relacion_carrito_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
