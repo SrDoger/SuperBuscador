@@ -119,8 +119,8 @@ $pdf = new PDF();
 $lector = new SQL();
 
 
-//$idproducto = $bdd->findCarrito($_SESSION["idUsuario"]);
-$idproducto = $carrito->findCarrito(12);
+$idproducto = $bdd->findCarrito($_SESSION["idUsuario"]);
+//$idproducto = $carrito->findCarrito(12);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 14);
 

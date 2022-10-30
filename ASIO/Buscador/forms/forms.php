@@ -1,28 +1,41 @@
 <?php
 
 require_once("../classes/Conexion.php");
-$user = new usuario();
 
-switch ($_POST["type"]) {
+class formulario
+{
+    protected $user = null;
 
-    case "register":
-        $user->register($_POST["mail"], $_POST["user"], $_POST["pwd"]);
-        break;
-    case "login":
-        $user->login($_POST["mail"], $_POST["pwd"]);
-        break;
-    case "out":
-        $user->logout();
-        break;
-    case "delete":
-        $user->delete($pwd);
-    case "userDelete":
-        $user->userDelete($id);
-        break;
-    case "userChangePWD":
-        $user->userChangePWD($id, $pwd);
-        break;
+    function typeOfForm($type)
+    {
+        $user = new usuario();
+        switch ($type) {
 
-    default:
-        header("Location:error.php?error=form");
+            case "register":
+                $user->register($_POST["mail"], $_POST["user"], $_POST["pwd"]);
+                break;
+            case "login":
+                $user->login($_POST["mail"], $_POST["pwd"]);
+                break;
+            case "out":
+                $user->logout();
+                break;
+            case "delete":
+                $user->delete($_POST["pwd"]);
+            case "userDelete":
+                $user->userDelete($_POST["id"]);
+                break;
+            case "userChangePWD":
+                $user->userChangePWD($_POST["id"], $_POST["pwd"]);
+                break;
+            case "showAllUsers":
+                $user->showAllUsers();
+                break;
+            default:
+                //header("Location:error.php?error=form");
+        }
+    }
 }
+
+//$form = new formulario();
+//$form->typeOfForm($_POST["type"]);

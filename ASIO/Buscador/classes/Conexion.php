@@ -103,6 +103,38 @@ class usuario extends BDD
       header("location:../admin/administrador.php");
     }
   }
+
+  function showAllUsers()
+  {
+    if ($_SESSION["admin"] == 1) {
+      $query = "SELECT * from usuarios";
+      $this->conn->query($query);
+      $resultado = $this->conn->query($query);
+      if ($resultado->num_rows > 0) {
+        $table = "
+        <table>
+          <tr>
+            <th><p>Id</p></th>
+            <th><p>Mail</p></th>
+            <th><p>Nombre</p></th>
+            <th><p>Contraseña</p></th> 
+            <th><p>Admin</p></th> 
+          </tr>";
+        while ($row = $resultado->fetch_assoc()) {
+          $table .=
+          "<tr>
+            <th><p>".$row["id"]."</p></th>
+            <th><p>".$row["mail"]."</p></th>
+            <th><p>".$row["nombre"]."</p></th>
+            <th><p>".$row["pwd"]."</p></th> 
+            <th><p>".$row["admin"]."</p></th> 
+          </tr>";
+        }
+      }
+      $table.="</table>";
+      echo $table;
+    }
+  }
 }
 class Carrito extends BDD
 {

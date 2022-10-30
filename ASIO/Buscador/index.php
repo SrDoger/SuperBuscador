@@ -17,7 +17,7 @@
         <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <?php
-
+                require("classes/Requiered.php");
                 require("classes/Session.php");
                 $session = new session();
                 if (isset($_SESSION['nombre'])) {

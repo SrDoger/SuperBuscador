@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
 </head>
+
 <body>
-    <h1>Boludaso que hiciste para que te tire error</h1>
+    <?php echo $error = "<h1>Error tipo: ".$_GET["error"] ."</h1>" ?>
 </body>
 </html>

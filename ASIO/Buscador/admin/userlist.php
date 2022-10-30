@@ -1,6 +1,8 @@
 <?php
 require("../classes/Session.php");
+require_once("../forms/forms.php");
 $session = new session();
+$formulario = new formulario();
 if ($_SESSION["admin"] == 1) {
 ?>
     <html>
@@ -14,6 +16,18 @@ if ($_SESSION["admin"] == 1) {
         <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <style>
+            p {
+                color: greenyellow;
+            }
+
+            table,
+            th,
+            td {
+                background-color: black;
+                border: 1px solid blue;
+            }
+        </style>
     </head>
 
     <body>
@@ -21,27 +35,7 @@ if ($_SESSION["admin"] == 1) {
             <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <?php
-
-
-
-                    if (isset($_SESSION['nombre'])) {
-                        $temp =
-                            '<a class="btn btn-primary ms-auto" href="../forms/account.php">
-                            <p><span><i class="fa fa-user"></i></span>' . $_SESSION['nombre'] . '</p>
-                        </a>';
-                        if ($_SESSION['admin'] == 1) {
-                            $temp .= '<a class="btn btn-primary " href=""><p>administracion</p></a>';
-                        }
-                        $temp .= '<form action="../forms/forms.php" method="post">
-                        <input type="text" name="type" id="type" value="out" hidden>
-                        <button type="submit">
-                            <p><span><i class="fa fa-sign-out"></i></span>out</p>
-                        </button>
-                        </form>';
-                    } else {
-                        $temp = '<a class="btn btn-primary ms-auto" role="button" href="forms/login.php">Sign In</a>';
-                    } 
-                    echo $temp;
+                    $session->isConnect();
                     ?>
                 </div>
             </div>
@@ -51,18 +45,22 @@ if ($_SESSION["admin"] == 1) {
             <div class="container">
                 <div class="row">
                     <div class="col-xl-9 mx-auto position-relative">
-                        <h1 class="mb-5">Lista de usuarios</h1>
+                        <h1 class="mb-5">Tabla de usuarios</h1>
+                        <?php
+                        //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
+                        $formulario->typeOfForm("showAllUsers");
+
+                        ?>
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
-                        
+
                         <li><a href="index.php">volver al atras</a></li>
-                        <h1>to do lista </h1>
                     </div>
                 </div>
             </div>
         </header>
         <footer class="bg-light footer">
-            
+
         </footer>
         <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/script.min.js"></script>
