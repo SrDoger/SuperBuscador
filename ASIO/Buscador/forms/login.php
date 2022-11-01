@@ -33,11 +33,11 @@
                             <label for="pass">Contraseña</label>
                             <input class="user" name="pwd" type="password" required placeholder="Contraseña">
                             <input type="submit" id="boton" value="Log-in">
-                            <a href="#" class="register🖊">Register</a>
                         </form>
+                        <button class="register🖊">Reegitrar</button>
                     </div>
                 </div>
-                <div class="login_box " id="register">
+                <div class="login_box show" id="register">
                     <div class="iner">
                         <h1>Register</h1>
                         <form class="ask" action="forms.php" method="POST">
