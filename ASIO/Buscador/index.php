@@ -14,16 +14,13 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
+    
                 <?php
-                require("classes/Requiered.php");
                 require("classes/Session.php");
                 $session = new session();
+                $session->setvalor("locate",null);
                 $session->isConnect();  
                 ?>
-            </div>
-        </div>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div class="overlay"></div>

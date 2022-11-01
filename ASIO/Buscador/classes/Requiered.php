@@ -1,8 +1,11 @@
 <?php
+class RQ{
+    function __construct(){
+        if (file_exists($_SESSION["locate"].'../coco.jpg')) {
 
-if (file_exists('../coco.jpg')) {
-
-} else {
- header("location:../Buscador/error.php?error=one_coco_is_missing");
- 
-}   
+        } else {
+         header("location:".$_SESSION["locate"]."error.php?error=one_coco_is_missing");
+         
+        }   
+    }
+}

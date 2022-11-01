@@ -14,33 +14,13 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <?php
 
-                require("classes/Session.php");
-                $session = new session();
-                if (isset($_SESSION['nombre'])) {
-                    $temp =
-                        '<a class="btn btn-primary ms-auto" href="forms/account.php">
-                        <p><span><i class="fa fa-user"></i></span>' . $_SESSION['nombre'] . '</p>
-                    </a>';
-                    if ($_SESSION['admin'] == 1) {
-                        $temp .= '<a class="btn btn-primary " href="admin"><p>administracion</p></a>';
-                    }
-                    $temp .= '<form action="forms/forms.php" method="post">
-                    <input type="text" name="type" id="type" value="out" hidden>
-                    <button type="submit">
-                        <p><span><i class="fa fa-sign-out"></i></span>out</p>
-                    </button>
-                    </form>';
-                } else {
-                    $temp = '<a class="btn btn-primary ms-auto" role="button" href="forms/login.php">Sign In</a>';
-                }
-                echo $temp;
-                ?>
-            </div>
-        </div>
+        <?php
+        require("classes/Session.php");
+        $session = new session();
+        $session->setvalor("locate", null);
+        $session->isConnect();
+        ?>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div class="overlay"></div>

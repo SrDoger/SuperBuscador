@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- to do añadir capchat-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -16,9 +17,13 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ms-auto" role="button" href="#">Sign In</a></div>
-        </div>
+
+        <?php
+        require("../classes/Session.php");
+        $session = new session();
+        $session->setvalor("locate", "../");
+        $session->isConnect();
+        ?>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div>
@@ -58,7 +63,9 @@
     </footer>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
-    <script>src="../assets/js/script.js"</script>
+    <script>
+        src = "../assets/js/script.js"
+    </script>
 </body>
 
 </html>

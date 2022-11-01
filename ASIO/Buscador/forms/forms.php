@@ -12,7 +12,7 @@ class formulario
             $this->typeOfForm($_POST["type"]);
     }
     function typeOfForm($type)
-    {
+    { 
         $user = new usuario();
         switch ($type) {
 

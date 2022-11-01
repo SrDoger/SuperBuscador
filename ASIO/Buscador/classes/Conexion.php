@@ -15,10 +15,9 @@ class BDD
     $condition = true;
     $query = "SELECT " . $DBvalue . " FROM " . $table . " WHERE " . $DBvalue . " = " . "'" . $value . "'";
     $result = $this->conn->query($query);
-
-    if ($result->num_rows > 0) {
+    if ($result->num_rows > 0)
       $condition = false; // no pueden existir 2 cuentas con mismo mail
-    }
+
     return $condition;
   }
 }
@@ -61,7 +60,8 @@ class usuario extends BDD
 
   function register($mail, $nombre, $pwd)
   {
-    if (isset($mail) && isset($nombre) && isset($pwd) && $this->ifExistOther("mail", "usuarios", $pwd)) {
+    $condition = $this->ifExistOther("mail", "usuarios", $mail);
+    if (isset($mail) && isset($nombre) && isset($pwd) && $condition) {
       $query = "INSERT INTO usuarios(id,mail,nombre,pwd) VALUES (NULL,'" . $mail . "','" . $nombre . "','" . md5($pwd) . "')";
       $this->conn->query($query);  //se sube a la BDD
       header("Location:../forms/login.php");

@@ -19,9 +19,11 @@ if (isset($_SESSION["id"])) {
 
     <body>
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-            <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-                <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ms-auto" role="button" href="#">Sign In</a></div>
-            </div>
+
+            <?php
+            $session->setvalor("locate", null);
+            $session->isConnect();
+            ?>
         </nav>
         <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;);background-size: 200px;">
             <div class="container">
@@ -58,7 +60,7 @@ if (isset($_SESSION["id"])) {
                             <form action="forms/forms.php" method="post">
                                 <input type="text" name="type" id="type" value="userChangePWD" hidden>
                                 <div class="row">
-                                <div class="col">
+                                    <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br></label><input class="form-control" type="password" name="oldpwd"></div>
                                     </div>
                                 </div>
