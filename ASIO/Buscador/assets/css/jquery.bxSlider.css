@@ -1,0 +1,57 @@
+/* 
+	jQuery Logo Slider Ticker 
+	by http://webdesignandsuch.com
+	build with code from http://bxslider.com
+*/
+
+
+#slider {
+	list-style:none;
+	padding:0px
+}
+
+.slider-container {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 2px;
+  height: 125px;
+  padding: 0;
+  width: 100%;
+    position: relative
+}
+.slider-container::before {
+  content: "<";
+  position: absolute;
+  top: 47px;
+  font-size: 34px;
+  color: #f39c12;
+  left: -20px;
+}
+.slider-container::after {
+  content: ">";
+  position: absolute;
+  top: 47px;
+  font-size: 34px;
+  color: #f39c12;
+  right: -20px;
+}
+/**#slider img { 
+	width:250px; 
+	height:125px; 
+	margin:0px; 
+	display:inline-block  
+}**/
+
+#slider li {
+	width:210px
+}
+.pager {
+  margin: 0;
+}
+.bx-wrapper {
+  width: 100%!important;
+}
+.bx-window{
+    width: 100%!important;
+}
+
+
