@@ -18,13 +18,13 @@ class session
     {
         if (isset($_SESSION['nombre'])) {
             $temp =
-                '<a class="btn btn-primary ms-auto" href="../forms/account.php">
+                '<a class="btn btn-primary ms-auto" href="account.php">
                 <p><span><i class="fa fa-user"></i></span>' . $_SESSION['nombre'] . '</p>
             </a>';
             if ($_SESSION['admin'] == 1) {
                 $temp .= '<a class="btn btn-primary " href=""><p>administracion</p></a>';
             }
-            $temp .= '<form action="../forms/forms.php" method="post">
+            $temp .= '<form action="forms/forms.php" method="post">
             <input type="text" name="type" id="type" value="out" hidden>
             <button type="submit">
                 <p><span><i class="fa fa-sign-out"></i></span>out</p>

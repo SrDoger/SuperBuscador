@@ -6,6 +6,11 @@ class formulario
 {
     protected $user = null;
 
+    function __construct()
+    {
+        if (isset($_POST["type"]))
+            $this->typeOfForm($_POST["type"]);
+    }
     function typeOfForm($type)
     {
         $user = new usuario();
@@ -20,22 +25,24 @@ class formulario
             case "out":
                 $user->logout();
                 break;
-            case "delete":
+            case "deleteCount":
                 $user->delete($_POST["pwd"]);
-            case "userDelete":
-                $user->userDelete($_POST["id"]);
-                break;
             case "userChangePWD":
-                $user->userChangePWD($_POST["id"], $_POST["pwd"]);
+                $user->userChangePWD($_POST["oldpwd"], $_POST["newpwd"]);
+                break;
+            case "emailchange":
+                $user->userChangeMail($_POST["newmail"], $_POST["pwd"]);
+                break;
+            case "AdminDeleteCount":
+                $user->AdminUserDelete($_POST["id"]);
                 break;
             case "showAllUsers":
                 $user->showAllUsers();
                 break;
             default:
-                //header("Location:error.php?error=form");
+                header("Location:error.php?error=form");
         }
     }
 }
 
-//$form = new formulario();
-//$form->typeOfForm($_POST["type"]);
+$form = new formulario();

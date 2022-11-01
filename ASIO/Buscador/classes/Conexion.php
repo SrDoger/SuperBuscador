@@ -10,17 +10,21 @@ class BDD
     $this->conn = new mysqli("localhost", "root", "", "empresa");
     mysqli_set_charset($this->conn, 'UTF8');
   }
+  function ifExistOther($DBvalue, $table, $value)
+  {
+    $condition = true;
+    $query = "SELECT " . $DBvalue . " FROM " . $table . " WHERE " . $DBvalue . " = " . "'" . $value . "'";
+    $result = $this->conn->query($query);
+
+    if ($result->num_rows > 0) {
+      $condition = false; // no pueden existir 2 cuentas con mismo mail
+    }
+    return $condition;
+  }
 }
 
 class usuario extends BDD
 {
-  function getIdUsuario()
-  {
-    $session = new session();
-    $conn = new mysqli("localhost", "root", "", "empresa");
-    $query = "SELECT id FROM usuarios WHERE nombre = '" . $session->getvalor("user") . "' AND pwd = '" . $session->getvalor("pwd") . "'";
-    return $conn->query($query);
-  }
 
   function login($mail, $pwd)
   {
@@ -36,6 +40,7 @@ class usuario extends BDD
         $session->setvalor("nombre", $row["nombre"]);
         $session->setvalor("id", $row["id"]);
         $session->setvalor("admin", $row["admin"]);
+        $session->setvalor("pwd", $row["pwd"]);
         header("Location:../index.php");
       } else {
         $session->end();
@@ -56,22 +61,12 @@ class usuario extends BDD
 
   function register($mail, $nombre, $pwd)
   {
-    if (isset($mail) && isset($nombre) && isset($pwd)) {
-      $condition = true;
-      $query = "SELECT mail FROM usuarios WHERE mail = " . "'" . $mail . "'";
-      $result = $this->conn->query($query);
-
-      if ($result->num_rows > 0) {
-        $condition = false; // no pueden existir 2 cuentas con mismo mail
-      }
-      if ($condition === true) {
-        $query = "INSERT INTO usuarios(id,mail,nombre,pwd) VALUES (NULL,'" . $mail . "','" . $nombre . "','" . md5($pwd) . "')";
-        echo $query;
-        $this->conn->query($query);  //se sube a la BDD
-        header("Location:../forms/login.php");
-      } else {
-        header("Location:../error.php?error=registerExists");
-      }
+    if (isset($mail) && isset($nombre) && isset($pwd) && $this->ifExistOther("mail", "usuarios", $pwd)) {
+      $query = "INSERT INTO usuarios(id,mail,nombre,pwd) VALUES (NULL,'" . $mail . "','" . $nombre . "','" . md5($pwd) . "')";
+      $this->conn->query($query);  //se sube a la BDD
+      header("Location:../forms/login.php");
+    } else {
+      header("Location:../error.php?error=registerExists");
     }
   }
   function delete($pwd)
@@ -81,21 +76,45 @@ class usuario extends BDD
       $query = "DELETE FROM usuarios WHERE id='" . $_SESSION["id"] . "'";
       $this->conn->query($query);
     } else {
-      header("location:../error.php");
+      header("location:../error.php?error=No se pudo borrar");
     }
   }
+  function userChangeMail($newmail, $pwd)
+  {
+    $session = new session();
+
+    if ((md5($pwd)) == $_SESSION["pwd"] && $this->ifExistOther("mail", "usuarios", $newmail)) {
+      $query = "UPDATE usuarios SET mail='" . $newmail . "' WHERE id='" . $_SESSION["id"] . "'";
+      $this->conn->query($query);
+    } else {
+      header("location:../error.php?error=ya esta en uso ese mail o la contraseña no correcta");
+    }
+  }
+  function userChangePWD($oldpwd, $newpwd)
+  {
+    $session = new session();
+    if ($_SESSION["pwd"] == md5($oldpwd)) {
+
+      $query = "UPDATE usuarios SET pwd='" . md5($newpwd) . "' WHERE id='" . $_SESSION["id"] . "'";
+      $this->conn->query($query);
+      header("location:../error.php?error=se guardo bien la contraseña");
+    } else {
+      header("location:../error.php?error=contraseña incorrecta");
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////
   //                         Funciones Administradoras
-  function userDelete($id)
+  function AdminUserDelete($id)
   {
     if ($_SESSION["admin"] == 1) {
       $session = new session();
-      $query = "DELETE FROM usuarios WHERE id='" . $_SESSION["id"] . "'";
+      $query = "DELETE FROM usuarios WHERE id='" . $id . "'";
       $this->conn->query($query);
       header("location:../admin/administrador.php");
     }
   }
-  function userChangePWD($id, $pwd)
+  function AdminUserChangePWD($id, $pwd)
   {
     if ($_SESSION["admin"] == 1) {
       $query = "UPDATE usuarios SET pwd='" . md5($pwd) . "' WHERE id='" . $id . "'";
@@ -122,20 +141,21 @@ class usuario extends BDD
           </tr>";
         while ($row = $resultado->fetch_assoc()) {
           $table .=
-          "<tr>
-            <th><p>".$row["id"]."</p></th>
-            <th><p>".$row["mail"]."</p></th>
-            <th><p>".$row["nombre"]."</p></th>
-            <th><p>".$row["pwd"]."</p></th> 
-            <th><p>".$row["admin"]."</p></th> 
+            "<tr>
+            <th><p>" . $row["id"] . "</p></th>
+            <th><p>" . $row["mail"] . "</p></th>
+            <th><p>" . $row["nombre"] . "</p></th>
+            <th><p>" . $row["pwd"] . "</p></th> 
+            <th><p>" . $row["admin"] . "</p></th> 
           </tr>";
         }
       }
-      $table.="</table>";
+      $table .= "</table>";
       echo $table;
     }
   }
 }
+
 class Carrito extends BDD
 {
   function addCarrito($idProducto, $IdUsuario)
