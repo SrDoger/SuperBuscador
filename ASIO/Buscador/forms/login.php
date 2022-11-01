@@ -59,6 +59,22 @@
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
     <script>src="../assets/js/script.js"</script>
+    <script>
+        const openl = document.getElementsByClassName('register🖊');
+        const openr = document.getElementsByClassName('Log-in')
+        const login = document.getElementById('login');
+        const register = document.getElementById('register');
+        openl.addEventListener('click',(e)=>{
+          e.preventDefault();
+          login.classList.add('show');
+          register.classList.remove('show');
+        });
+        openr.addEventListener('click',(e)=>{
+          e.preventDefault();
+          login.classList.remove('show');
+          register.classList.add('show');
+        });
+    </script>
 </body>
 
 </html>
