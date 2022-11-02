@@ -5,13 +5,12 @@
     max-width: 500px;
     height: auto;
     width: 100%;
-    position: relative;
+    position: absolute;
     top: 250px;
     left: 50%;
     margin-left: -250px;
     border: rgb(0, 111, 230) solid 2px;
     border-radius: 20px;
-
 }
 .iner{
     display: grid;
@@ -28,8 +27,7 @@
 }
 .ask{
     display: grid;
-    width: 350px;
-    padding-bottom: 20px;
+    width: auto;
 }
 .ask input , label{
     text-align: center;
@@ -80,6 +78,6 @@
 }
 .show{
     z-index: 1;
-    transform: rotateY(90deg);
+    transform: rotatex(90deg);
     transition: transform 0.5s !important;
 }

@@ -16,11 +16,14 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ms-auto" role="button" href="#">Sign In</a></div>
-        </div>
+        <?php
+        require("../classes/Session.php");
+        $session = new session();
+        $session->setvalor("locate", "../");
+        $session->isConnect();
+        ?>
     </nav>
-    <header class="text-center text-white masthead" style="background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
+    <header class="text-center text-white" style="height: 85vh; background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div>
             <div class="log_container">
                 <div class="login_box" id="login">
@@ -28,9 +31,9 @@
                         <h1>Login</h1>
                         <form class="ask" action="forms.php" method="POST">
                             <input type="text" name="type" id="" value="login" hidden>
-                            <label for="user">Correo Electronico</label>
+                            <!-- <label for="user">Correo Electronico</label> -->
                             <input class="user" name="mail" type="email" required placeholder="Correo Electronico">
-                            <label for="pass">Contraseña</label>
+                            <!-- <label for="pass">Contraseña</label> -->
                             <input class="user" name="pwd" type="password" required placeholder="Contraseña">
                             <input type="submit" id="boton" value="Log-in">
                         </form>
@@ -46,7 +49,7 @@
                             <input type="text" name="user" id="user" required placeholder="Usuario">
                             <input type="password" name="pwd" id="pass" required placeholder="Contraseña">
                             <!--- <input type="password" name="pwd" id="" required placeholder="Confirmar Contraseña"> To Do -->
-                            <button type="submit">Enviar</button>
+                            <button type="submit" id="boton">Enviar</button>
                         </form>
                         <a href="#" class="Log-in">Log-in</a>
                     </div>
@@ -54,21 +57,22 @@
             </div>
         </div>
     </header>
-    <footer class="bg-light footer">
-    </footer>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
     <script>src="../assets/js/script.js"</script>
     <script>
-        const openl = document.getElementsByClassName('register🖊');
-        const openr = document.getElementsByClassName('Log-in')
-        const login = document.getElementById('login');
-        const register = document.getElementById('register');
+        const openl = document.querySelector('.register🖊');
+        const openr =document.querySelector('.Log-in')
+        const login =document.querySelector('#login');
+        const register = document.querySelector('#register');
+
+
         openl.addEventListener('click',(e)=>{
           e.preventDefault();
           login.classList.add('show');
           register.classList.remove('show');
         });
+
         openr.addEventListener('click',(e)=>{
           e.preventDefault();
           login.classList.remove('show');
