@@ -37,7 +37,7 @@
                             <input class="user" name="pwd" type="password" required placeholder="Contraseña">
                             <input type="submit" id="boton" value="Log-in">
                         </form>
-                        <button class="register🖊">Reegitrar</button>
+                        <button class="register🖊">Regitrar</button>
                     </div>
                 </div>
                 <div class="login_box show" id="register">
@@ -49,7 +49,7 @@
                             <input type="text" name="user" id="user" required placeholder="Usuario">
                             <input type="password" name="pwd" id="pass" required placeholder="Contraseña">
                             <!--- <input type="password" name="pwd" id="" required placeholder="Confirmar Contraseña"> To Do -->
-                            <button type="submit" id="boton">Enviar</button>
+                            <input type="submit" id="boton" value="Sign-up">
                         </form>
                         <a href="#" class="Log-in">Log-in</a>
                     </div>

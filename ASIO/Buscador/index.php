@@ -46,8 +46,8 @@
 
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
-                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);"><i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
-
+                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
+                                    <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
                                     <div id="options" style="display: none;">
                                         <input type="text" class="filtro" name="minPrice" placeholder="Precio Minimo" value="0">
                                         <input type="text" class="filtro" name="maxPrice" placeholder="Precio Maximo " value="10000000">
