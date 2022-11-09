@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 29, 2022 at 04:26 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-11-2022 a las 19:27:57
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,15 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `empresa`
+-- Base de datos: `empresa`
 --
+CREATE DATABASE IF NOT EXISTS `empresa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `empresa`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `busqueda`
+-- Estructura de tabla para la tabla `busqueda`
 --
 
+DROP TABLE IF EXISTS `busqueda`;
 CREATE TABLE `busqueda` (
   `id` int(10) NOT NULL,
   `search` varchar(50) CHARACTER SET utf8mb4 NOT NULL
@@ -35,68 +38,22 @@ CREATE TABLE `busqueda` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carrito`
+-- Estructura de tabla para la tabla `carrito`
 --
 
+DROP TABLE IF EXISTS `carrito`;
 CREATE TABLE `carrito` (
   `idProducto` text NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `carrito`
---
-
-INSERT INTO `carrito` (`idProducto`, `id_usuario`) VALUES
-('sdafas', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('', 12),
-('\"id\"', 12),
-('\"id\"', 12),
-('\"id\"', 12),
-('\"id\"', 12),
-('\"id\"', 12),
-('\"id\"', 12),
-('id', 12),
-('id', 12),
-('id', 12),
-('id', 12),
-('id', 12),
-('id', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('MLA1143745839', 12),
-('', 12),
-('MLA929070256', 12);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historial`
+-- Estructura de tabla para la tabla `historial`
 --
 
+DROP TABLE IF EXISTS `historial`;
 CREATE TABLE `historial` (
   `id` int(10) NOT NULL,
   `producto` varchar(60) NOT NULL
@@ -105,9 +62,10 @@ CREATE TABLE `historial` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `mail` varchar(30) NOT NULL,
@@ -117,7 +75,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `pwd`, `admin`) VALUES
@@ -128,37 +86,37 @@ INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `pwd`, `admin`) VALUES
 (415, 'sfdfsd@gmail.com', 'tuviejaentangfa', '202cb962ac59075b964b07152d234b70', NULL);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `carrito`
+-- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
   ADD KEY `relacion_carrito_usuario` (`id_usuario`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=416;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `carrito`
+-- Filtros para la tabla `carrito`
 --
 ALTER TABLE `carrito`
   ADD CONSTRAINT `relacion_carrito_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
