@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-
+    <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button></div>
         <?php
         require("../classes/Session.php");
         $session = new session();

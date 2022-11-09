@@ -66,7 +66,8 @@ if (isset($_SESSION["id"])) {
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br></label><input class="form-control" type="password" name="newpwd"></div>
+                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
+                                        </label><input class="form-control" type="password" name="newpwd"></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
