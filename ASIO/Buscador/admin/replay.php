@@ -32,13 +32,10 @@ if ($_SESSION["admin"] == 1) {
 
     <body>
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-            <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <?php
-                    $session->isConnect();
-                    ?>
-                </div>
-            </div>
+
+            <?php
+            $session->isConnect();
+            ?>
         </nav>
         <header class="text-center text-white masthead" style="background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
             <div class="overlay"></div>
@@ -46,9 +43,15 @@ if ($_SESSION["admin"] == 1) {
                 <div class="row">
                     <div class="col-xl-9 mx-auto position-relative">
                         <h1 class="mb-5">Tabla de usuarios</h1>
+                        <form action="replay.php?" method="get">
+                            <input type="text" name="query" id="query" value = "AdminDeleteCount" hidden>
+                            <input type="number" name="id" id="id">
+                            <button type="submit">Enviar</button>
+                        </form>
                         <?php
                         //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
-                        $formulario->typeOfForm("showAllUsers");
+                        $formulario->typeOfForm($_GET["query"]);
+
 
                         ?>
                     </div>

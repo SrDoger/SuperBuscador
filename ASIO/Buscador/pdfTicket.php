@@ -15,28 +15,23 @@ class SQL
             array_push($aux, $valor);
         }
         return $aux;
-        
     }
     function assemblerFile($empresa, $listadeproductos)
     {
         $merc = new merc();
         //$ebay = new ebay();
-        
-    
-        
-        foreach ($empresa as $boolean)
-        
-        {   
-            $valoresTicket = array();
 
-            foreach ($listadeproductos as $idProduct)
-            { 
+        $valoresTicket = array();
+
+        foreach ($empresa as $boolean) {
+
+            foreach ($listadeproductos as $idProduct) {
                 if ($boolean == 0)
                     $rta = $merc->getValores($idProduct);
                 elseif ($boolean == 1)
                     $rta = "no esta disponible para Ebay"; //$ebay->getvalores;
                 else $rta = "error 404";
-                array_push($valoresTicket, $rta); 
+                array_push($valoresTicket, $rta);
             }
         }
         return $valoresTicket;
@@ -73,7 +68,7 @@ class PDF extends FPDF
     function LoadData($file)
     {
         // Leer las líneas del fichero
-        
+
         //$data = $file;
         $lines = file($file);
         $data = array();
@@ -82,7 +77,7 @@ class PDF extends FPDF
         return $data;
     }
 
-    function FancyTable($header, $data)
+    function FancyTable($header, $data, $footer)
     {
         // Colores, ancho de línea y fuente en negrita
         $this->SetFillColor(255, 0, 0);
@@ -109,6 +104,9 @@ class PDF extends FPDF
             $this->Ln();
             $fill = !$fill;
         }
+        for ($i = 0; $i < count($footer); $i++)
+            $this->Cell($w[$i], 7, $footer[$i], 1, 0, 'C', true);
+        $this->Ln();
         // Línea de cierre
         $this->Cell(array_sum($w), 0, '', 'T');
     }
@@ -117,9 +115,9 @@ class PDF extends FPDF
 $carrito = new Carrito();
 $pdf = new PDF();
 $lector = new SQL();
+$session = new session();
 
-
-$idproducto = $bdd->findCarrito($_SESSION["idUsuario"]);
+$idproducto = $carrito->findCarrito($_SESSION["id"]);
 //$idproducto = $carrito->findCarrito(12);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 14);
@@ -131,10 +129,17 @@ $pdf->SetFont('Arial', '', 14);
 
 $header = array('ID', 'Empresa', 'Producto', 'Precio');
 $data = $lector->assemblerFile($lector->boolList($idproducto), $idproducto);
+$total = 0;
+foreach ($data as $productos) {
+    $total += $productos[3];
+}
+$footer = array('Costo Total','','',$total);
+
 
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->FancyTable($header, $data);   
+$pdf->FancyTable($header, $data, $footer);
+//$pdf->
 $pdf->Output();
 ?>
 

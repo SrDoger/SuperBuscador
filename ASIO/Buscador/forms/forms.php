@@ -8,11 +8,12 @@ class formulario
 
     function __construct()
     {
-        if (isset($_POST["type"]))
-            $this->typeOfForm($_POST["type"]);
+
+        if (isset($_GET["type"]))
+            $this->typeOfForm($_GET["type"]);
     }
     function typeOfForm($type)
-    { 
+    {
         $user = new usuario();
         switch ($type) {
 
@@ -34,11 +35,15 @@ class formulario
                 $user->userChangeMail($_POST["newmail"], $_POST["pwd"]);
                 break;
             case "AdminDeleteCount":
-                $user->AdminUserDelete($_POST["id"]);
+                if (isset($_GET["id"]))
+                    $user->AdminUserDelete($_GET["id"]);
                 break;
             case "showAllUsers":
                 $user->showAllUsers();
                 break;
+            case null:
+                break;
+                header("Location:error.php?error=null");
             default:
                 header("Location:error.php?error=form");
         }

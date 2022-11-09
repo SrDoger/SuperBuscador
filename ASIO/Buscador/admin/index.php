@@ -34,14 +34,14 @@ if ($_SESSION["admin"] == 1) {
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
                         <ol>
-                            <li><a href="userlist.php">Ver lista de usuarios</a></li>
-                            <li><a href="userbymail.php">Buscar usuario por mail</a></li>
-                            <li><a href="userbyid.php">Buscar usuario por id</a></li>
+                            <li><a href="replay.php?query=showAllUsers">Ver lista de usuarios</a></li>
+                            <li><a href="replay.php?query=deleteCount">Buscar usuario por mail</a></li>
+                            <li><a href="replay.php?query=">Buscar usuario por id</a></li>
                         </ol>
                         <ol>
                             <h2>Por ID</h2>
-                            <li><a href="userdel.php">eliminar usuario</a></li>
-                            <li><a href="userchangepwd.php">Cambiar contraseña de usuario</a></li>
+                            <li><a href="replay.php?query=AdminDeleteCount">eliminar usuario</a></li>
+                            <li><a href="replay.php?query=">Cambiar contraseña de usuario</a></li>
 
                         </ol>
                         <li><a href="../index.php">volver al inicio</a></li>
