@@ -16,11 +16,12 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button></div>
         <?php
         require("../classes/Session.php");
         $session = new session();
         $session->setvalor("locate", "../");
-        $session->isConnect();
+        //$session->isConnect();
         ?>
     </nav>
     <header class="text-center text-white" style="height: 85vh; background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
