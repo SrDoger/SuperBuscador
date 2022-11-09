@@ -22,10 +22,10 @@
         require("../classes/Session.php");
         $session = new session();
         $session->setvalor("locate", "../");
-        $session->isConnect();
+        //$session->isConnect();
         ?>
     </nav>
-    <header class="text-center text-white masthead" style="background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
+    <header class="text-center text-white" style="height: 85vh; background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div>
             <div class="log_container">
                 <div class="login_box" id="login">
@@ -33,16 +33,16 @@
                         <h1>Login</h1>
                         <form class="ask" action="forms.php" method="POST">
                             <input type="text" name="type" id="" value="login" hidden>
-                            <label for="user">Correo Electronico</label>
+                            <!-- <label for="user">Correo Electronico</label> -->
                             <input class="user" name="mail" type="email" required placeholder="Correo Electronico">
-                            <label for="pass">Contraseña</label>
+                            <!-- <label for="pass">Contraseña</label> -->
                             <input class="user" name="pwd" type="password" required placeholder="Contraseña">
                             <input type="submit" id="boton" value="Log-in">
-                            <a href="#" class="register🖊">Register</a>
                         </form>
+                        <button class="register🖊">Regitrar</button>
                     </div>
                 </div>
-                <div class="login_box " id="register">
+                <div class="login_box show" id="register">
                     <div class="iner">
                         <h1>Register</h1>
                         <form class="ask" action="forms.php" method="POST">
@@ -51,7 +51,7 @@
                             <input type="text" name="user" id="user" required placeholder="Usuario">
                             <input type="password" name="pwd" id="pass" required placeholder="Contraseña">
                             <!--- <input type="password" name="pwd" id="" required placeholder="Confirmar Contraseña"> To Do -->
-                            <button type="submit">Enviar</button>
+                            <input type="submit" id="boton" value="Sign-up">
                         </form>
                         <a href="#" class="Log-in">Log-in</a>
                     </div>
@@ -59,12 +59,27 @@
             </div>
         </div>
     </header>
-    <footer class="bg-light footer">
-    </footer>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
+    <script>src="../assets/js/script.js"</script>
     <script>
-        src = "../assets/js/script.js"
+        const openl = document.querySelector('.register🖊');
+        const openr =document.querySelector('.Log-in')
+        const login =document.querySelector('#login');
+        const register = document.querySelector('#register');
+
+
+        openl.addEventListener('click',(e)=>{
+          e.preventDefault();
+          login.classList.add('show');
+          register.classList.remove('show');
+        });
+
+        openr.addEventListener('click',(e)=>{
+          e.preventDefault();
+          login.classList.remove('show');
+          register.classList.add('show');
+        });
     </script>
 </body>
 
