@@ -116,7 +116,7 @@ class usuario extends BDD
       header("location:../admin/administrador.php");
       $query = "DELETE FROM usuarios WHERE id='" . $id . "'";
       $this->conn->query($query);
-      header("location:../admin/administrador.php");
+      header("location:../admin/index.php?result=successfully");
     }
   }
   function AdminUserChangePWD($id, $pwd)
@@ -124,7 +124,26 @@ class usuario extends BDD
     if ($_SESSION["admin"] == 1) {
       $query = "UPDATE usuarios SET pwd='" . md5($pwd) . "' WHERE id='" . $id . "'";
       $this->conn->query($query);
-      header("location:../admin/administrador.php");
+      header("location:../admin/index.php?result=successfully");
+    }
+  }
+  function AdminUserChangeMail($id, $mail)
+  {
+    if ($_SESSION["admin"] == 1) {
+      if ($this->ifExistOther("mail", "usuarios", $mail)) {
+        $query = "UPDATE usuarios SET mail='" . $mail . "' WHERE id='" . $id . "'";
+        $this->conn->query($query);
+        header("location:../admin/index.php?result=successfully");
+      } else
+        header("location:../error.php?error=ya esta en uso ese mail o la contraseña no correcta");
+    }
+  }
+  function AdminUserChangeNickName($id, $nickName)
+  {
+    if ($_SESSION["admin"] == 1) {
+      $query = "UPDATE usuarios SET nombre='" . $nickName . "' WHERE id='" . $id . "'";
+      $this->conn->query($query);
+      header("location:../admin/index.php?result=successfully");
     }
   }
 

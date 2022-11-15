@@ -32,7 +32,7 @@
                     <div class="iner">
                         <h1>Login</h1>
                         <form class="ask" action="forms.php" method="POST">
-                            <input type="text" name="type" id="" value="login" hidden>
+                            <input type="text" name="type" id="type" value="login" hidden>
                             <!-- <label for="user">Correo Electronico</label> -->
                             <input class="user" name="mail" type="email" required placeholder="Correo Electronico">
                             <!-- <label for="pass">Contraseña</label> -->

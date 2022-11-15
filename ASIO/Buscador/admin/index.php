@@ -41,7 +41,9 @@ if ($_SESSION["admin"] == 1) {
                         <ol>
                             <h2>Por ID</h2>
                             <li><a href="replay.php?query=AdminDeleteCount">eliminar usuario</a></li>
-                            <li><a href="replay.php?query=">Cambiar contraseña de usuario</a></li>
+                            <li><a href="replay.php?query=AdminUserChangePWD">Cambiar contraseña de usuario</a></li>
+                            <li><a href="replay.php?query=AdminUserChangeMail">Cambiar mail de usuario</a></li>
+                            <li><a href="replay.php?query=AdminUserChangeNickName">Cambiar nombre del usuario</a></li>
 
                         </ol>
                         <li><a href="../index.php">volver al inicio</a></li>

@@ -43,11 +43,42 @@ if ($_SESSION["admin"] == 1) {
                 <div class="row">
                     <div class="col-xl-9 mx-auto position-relative">
                         <h1 class="mb-5">Tabla de usuarios</h1>
-                        <form action="replay.php?" method="get">
-                            <input type="text" name="query" id="query" value = "AdminDeleteCount" hidden>
-                            <input type="number" name="id" id="id">
-                            <button type="submit">Enviar</button>
-                        </form>
+                        <div class="?">
+                            <h2>Eliminar cuenta</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminDeleteCount" hidden>
+                                <input type="number" name="id" id="id">
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="?">
+                            <h2>Cambiar contraseña de cuenta</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminUserChangePWD" hidden>
+                                <input type="number" name="id" id="id">
+                                <input type="text" name="newPwd" id="newPwd">
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="?">
+                            <h2>Cambiar mail de cuenta</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden>
+                                <input type="number" name="id" id="id">
+                                <input type="mail" name="mail" id="newMail">
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="?">
+                            <h2>Cambiar nombre de usuario de cuenta</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminUserChangeNickName" hidden>
+                                <input type="number" name="id" id="id">
+                                <input type="text" name="newNickName" id="newNickName">
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        
                         <?php
                         //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
                         $formulario->typeOfForm($_GET["query"]);
