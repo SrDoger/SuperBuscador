@@ -109,6 +109,11 @@ class usuario extends BDD
   {
     if ($_SESSION["admin"] == 1) {
       $session = new session();
+      echo $id;
+
+      $query = "DELETE FROM carrito WHERE id_usuario='" . $id . "'";
+      $this->conn->query($query);
+      header("location:../admin/administrador.php");
       $query = "DELETE FROM usuarios WHERE id='" . $id . "'";
       $this->conn->query($query);
       header("location:../admin/administrador.php");

@@ -31,6 +31,7 @@ class session
                 $temp .= '<a class="btn btn-primary " href="' . $_SESSION["locate"] . 'admin/index.php"><p>administracion</p></a>';
             }
             $temp .= '
+            <a class="btn btn-primary ms-auto" role="button" href="' . $_SESSION["locate"] . 'confirm.php"><span class="material-symbols-outlined">shopping_cart</span></a>
                 <form action="' . $_SESSION["locate"] . 'forms/forms.php" method="post">
                 <input type="text" name="type" id="type" value="out" hidden>
                 <button type="submit">
