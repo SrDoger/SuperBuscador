@@ -10,11 +10,12 @@ class merc
 
   function Search($palabraClave)
   {
+    echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+             <div id="mercadolibre">';
     $productId = str_replace(" ", "%20", $palabraClave);
     $data = json_decode(file_get_contents('https://api.mercadolibre.com/sites/MLA/search?q=' . $productId, '&Minimum-price=3000'), true);
 
-    $html = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-             <div id="mercadolibre">';
+
     $valor = 0;
     foreach ($data["results"] as $i) {
       if ($valor >= 10) {
@@ -28,8 +29,8 @@ class merc
         }
         if ($_POST['maxPrice'] >= $data['price'] && $_POST['minPrice'] <= $data['price']) {
           $valor += 1;
-          $html .=
-            '<div class="containerMerc">
+          echo
+          '<div class="containerMerc">
                                 <br>
                                 <form action="product.php" method="post">
                                     <input type="text" value = "merc" name="api" hidden>
@@ -46,18 +47,17 @@ class merc
                                 <br>
                                 <p>Precio:' . $data['price'] . '$</p>
                                 <br>
-                                <div class="imgSecundarias">
+                                
                             </div>
-                            <hr>
-                        </div>';
+                        ';
           break;
         } else {
           break;
         }
       }
 
-      $html .= '</script>';
-      echo $html;
+      ;
+      echo '</script>';
     }
     echo "</div>
     <script>
