@@ -19,8 +19,7 @@ if (isset($_SESSION["id"])) {
 
     <body>
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-
-            <?php
+        <?php
             $session->setvalor("locate", null);
             $session->isConnect();
             ?>
@@ -29,7 +28,6 @@ if (isset($_SESSION["id"])) {
             <div class="container">
                 <div class="col-lg-12 d-lg-flex justify-content-lg-center">
                     <!-- Configuraciones de usuario -->
-
                     <div class="card shadow mb-3">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 fw-bold">Cambio de Mail</p>
@@ -39,19 +37,20 @@ if (isset($_SESSION["id"])) {
                                 <input type="text" name="type" id="type" value="emailchange" hidden>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="email"><strong>Nuevo Mail</strong></label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail"></div>
+                                        <div class="form-group mb-3"><label class="form-label" for="email"><strong>Nuevo Mail</strong>
+                                        </label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail"></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong><br></label><input class="form-control" type="password" name="pwd"></div>
+                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong>
+                                        <br></label><input class="form-control" type="password" name="pwd"></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
                             </form>
                         </div>
                     </div>
-
                     <div class="card shadow mb-3">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 fw-bold">Cambio de Contraseña</p>
@@ -60,20 +59,21 @@ if (isset($_SESSION["id"])) {
                             <form action="forms/forms.php" method="post">
                                 <input type="text" name="type" id="type" value="userChangePWD" hidden>
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br></label><input class="form-control" type="password" name="oldpwd"></div>
+                                <div class="col">
+                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br>
+                                        </label><input class="form-control" type="password" name="oldpwd"></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br></label><input class="form-control" type="password" name="newpwd"></div>
+                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
+                                        </label><input class="form-control" type="password" name="newpwd"></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </header>

@@ -1,7 +1,10 @@
-const openl = document.querySelector('.register🖊');
-const openr =document.querySelector('.Log-in')
-const login =document.querySelector('#login');
-const register = document.querySelector('#register');
+window.alert("Bienvenido a nuestro sitio web");
+
+
+const openl = document.getElementsByClassName('register🖊');
+const openr = document.getElementsByClassName('Log-in')
+const login = document.getElementById('login');
+const register = document.getElementById('register');
 
 
 openl.addEventListener('click',(e)=>{
