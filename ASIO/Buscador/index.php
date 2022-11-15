@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - main</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
@@ -43,8 +44,8 @@
 
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
-                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
-                                    <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
+                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);"><i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
+
                                     <div id="options" style="display: none;">
                                         <input type="text" class="filtro" name="minPrice" placeholder="Precio Minimo" value="0">
                                         <input type="text" class="filtro" name="maxPrice" placeholder="Precio Maximo " value="10000000">
