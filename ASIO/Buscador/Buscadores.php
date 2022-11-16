@@ -35,8 +35,8 @@
                             <div class="col padMar">
                                 <div class="input-group">
                                     <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
-                                    <input type="checkbox" class="option" name="merc" id="" value="on">
-                                    <input type="checkbox" class="option" name="ebay" id="" value="on">
+                                    <input type="submit" class="option" name="merc" id="" value="on">
+                                    <input type="submit" class="option" name="ebay" id="" value="on">
                                     <div id="options">
                                         <input type="text" name="minPrice" placeholder="Precio Minimo" value="0" hidden>
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>

@@ -235,24 +235,22 @@ class ebay
         $price *= 200;
         $results .= "
         
-      <div id='containerEbay'>
-      <form action='product.php' method='post'>
-        <input type='submit' value='producto'>
-        <input type='text' value = 'ebay' name='api' hidden>
-        <input type='text' name='element' value='$itemid' hidden>
-        </form>
-        
-      <h2>$title</h2>
-            $itemid
-        <img src=\"$pic\"><br>
-        <a href='$link\'>Link a Ebay</a>
-        <p>$subtitle</p>
-        <p>Price $$price</p>
-        <hr>
+      <div class='containerEbay'>
+        <form action='product.php' method='post'>
+          <input type='submit' value='producto'>
+          <input type='text' value = 'ebay' name='api' hidden>
+          <input type='text' name='element' value='$itemid' hidden>
+          </form>
+
+          <h2>$title</h2>  
+            <img src=\"$pic\"><br>
+            <a href='$link\'>Link a Ebay</a>
+            <p>$subtitle</p>
+            <p>Price $$price</p>
       </div>";
       }
     }
-
+    //$itemid
     echo "<div class='ebay'>$results</div>";
   }
 
