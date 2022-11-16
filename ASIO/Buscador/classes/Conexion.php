@@ -10,7 +10,8 @@ class BDD
     $this->conn = new mysqli("localhost", "root", "", "empresa");
     mysqli_set_charset($this->conn, 'UTF8');
   }
-  function ifExistOther($DBvalue, $table, $value)
+
+  function ifExist($DBvalue, $table, $value)
   {
     $condition = true;
     $query = "SELECT " . $DBvalue . " FROM " . $table . " WHERE " . $DBvalue . " = " . "'" . $value . "'";
@@ -60,7 +61,7 @@ class usuario extends BDD
 
   function register($mail, $nombre, $pwd)
   {
-    $condition = $this->ifExistOther("mail", "usuarios", $mail);
+    $condition = $this->ifExist("mail", "usuarios", $mail);
     if (isset($mail) && isset($nombre) && isset($pwd) && $condition) {
       $query = "INSERT INTO usuarios(id,mail,nombre,pwd) VALUES (NULL,'" . $mail . "','" . $nombre . "','" . md5($pwd) . "')";
       $this->conn->query($query);  //se sube a la BDD
@@ -83,7 +84,7 @@ class usuario extends BDD
   {
     $session = new session();
 
-    if ((md5($pwd)) == $_SESSION["pwd"] && $this->ifExistOther("mail", "usuarios", $newmail)) {
+    if ((md5($pwd)) == $_SESSION["pwd"] && $this->ifExist("mail", "usuarios", $newmail)) {
       $query = "UPDATE usuarios SET mail='" . $newmail . "' WHERE id='" . $_SESSION["id"] . "'";
       $this->conn->query($query);
     } else {
@@ -109,14 +110,24 @@ class usuario extends BDD
   {
     if ($_SESSION["admin"] == 1) {
       $session = new session();
-      echo $id;
-
       $query = "DELETE FROM carrito WHERE id_usuario='" . $id . "'";
       $this->conn->query($query);
       header("location:../admin/administrador.php");
       $query = "DELETE FROM usuarios WHERE id='" . $id . "'";
       $this->conn->query($query);
       header("location:../admin/index.php?result=successfully");
+    }
+  }
+  function AdminUserCar($id)
+  {
+    if ($_SESSION["admin"] == 1) {
+      header("location:../pdfTicket.php?id=".$id);
+    }
+  }
+  function AdminUserRecord($id)
+  {
+    if ($_SESSION["admin"] == 1) {
+      header("Location:../error.php?error=Todavia no existe la lectura de historial");
     }
   }
   function AdminUserChangePWD($id, $pwd)
@@ -130,7 +141,7 @@ class usuario extends BDD
   function AdminUserChangeMail($id, $mail)
   {
     if ($_SESSION["admin"] == 1) {
-      if ($this->ifExistOther("mail", "usuarios", $mail)) {
+      if ($this->ifExist("mail", "usuarios", $mail)) {
         $query = "UPDATE usuarios SET mail='" . $mail . "' WHERE id='" . $id . "'";
         $this->conn->query($query);
         header("location:../admin/index.php?result=successfully");
@@ -207,4 +218,41 @@ class Carrito extends BDD
     }
     return $lista;
   }
+}
+
+class SQL
+{
+    function boolList($list)
+    {
+        $aux = array();
+        foreach ($list as $id) {
+            $valor = intval($id); // if not int returns 0
+            if ($valor != 0)
+                $valor = 1;
+            array_push($aux, $valor);
+        }
+        return $aux;
+    }
+    function assemblerFile($empresa, $listadeproductos)
+    {
+        $merc = new merc();
+        //$ebay = new ebay();
+
+        $valoresTicket = array();
+
+        foreach ($empresa as $boolean) {
+
+            foreach ($listadeproductos as $idProduct) {
+                if ($boolean == 0)
+                    $rta = $merc->getValores($idProduct);
+                elseif ($boolean == 1)
+                    $rta = "no esta disponible para Ebay"; //$ebay->getvalores;
+                else $rta = "error 404";
+                array_push($valoresTicket, $rta);
+                
+            }
+            break;
+        }
+        return $valoresTicket;
+    }
 }

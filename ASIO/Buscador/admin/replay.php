@@ -35,7 +35,7 @@ if ($_SESSION["admin"] == 1) {
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
 
             <?php
-            $session->isConnect();
+            $session->isConnect("../");
             ?>
         </nav>
         <header class="text-center text-white masthead" style="background: url(&quot;../assets/img/nis/idea1.png&quot;) center / 200px repeat;">
@@ -47,35 +47,52 @@ if ($_SESSION["admin"] == 1) {
                         <div class="?">
                             <h2>Eliminar cuenta</h2>
                             <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminDeleteCount" hidden>
-                                <input type="number" name="id" id="id">
+                                <input type="text" name="query" id="query" value="AdminDeleteCount" hidden required>
+                                <input type="number" name="id" id="id" required>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
                         <div class="?">
                             <h2>Cambiar contraseña de cuenta</h2>
                             <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangePWD" hidden>
-                                <input type="number" name="id" id="id">
-                                <input type="text" name="newPwd" id="newPwd">
+                                <input type="text" name="query" id="query" value="AdminUserChangePWD" hidden required>
+                                <input type="number" name="id" id="id" required>
+                                <input type="text" name="newPwd" id="newPwd" required>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
                         <div class="?">
                             <h2>Cambiar mail de cuenta</h2>
                             <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden>
-                                <input type="number" name="id" id="id">
-                                <input type="mail" name="mail" id="newMail">
+                                <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden required>
+                                <input type="number" name="id" id="id" required>
+                                <input type="mail" name="mail" id="newMail" required>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
                         <div class="?">
                             <h2>Cambiar nombre de usuario de cuenta</h2>
                             <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangeNickName" hidden>
-                                <input type="number" name="id" id="id">
-                                <input type="text" name="newNickName" id="newNickName">
+                                <input type="text" name="query" id="query" value="AdminUserChangeNickName" hidden required>
+                                <input type="number" name="id" id="id" required>
+                                <input type="text" name="newNickName" id="newNickName" required>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="?">
+                            <h2>Ver Carrito</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminUserCar" hidden required>
+                                <input type="number" name="id" id="id" required>
+                              
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="?">
+                            <h2>Ver Historial</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="AdminUserRecord" hidden required>
+                                <input type="number" name="id" id="id" required>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>

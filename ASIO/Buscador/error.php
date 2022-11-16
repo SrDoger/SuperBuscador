@@ -30,7 +30,9 @@
                         require("classes/Session.php");
                         $session = new session();
                         $session->setvalor("locate", null);
-                        echo $error = "<h1>Error tipo: " . $_GET["error"] . "</h1>"
+                        echo $error = "<h1>Error tipo: " . $_GET["error"] . "</h1>";
+                        if($_GET["error"] == 'one_coco_is_missing')
+                        echo '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"    >Click aqui para comunicarte con la administracion</a>';
                         ?>
                     </h1>
                 </div>

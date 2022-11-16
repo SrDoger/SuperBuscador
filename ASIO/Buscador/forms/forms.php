@@ -40,6 +40,14 @@ class formulario
                 if (isset($_GET["id"]))
                     $user->AdminUserDelete($_GET["id"]);
                 break;
+            case "AdminUserCar":
+                if (isset($_GET["id"]))
+                    $user->AdminUserCar($_GET["id"]);
+                break;
+            case "AdminUserRecord":
+                if (isset($_GET["id"]))
+                    $user->AdminUserRecord($_GET["id"]);
+                break;
             case "AdminUserChangePWD":
                 if (isset($_GET["id"]))
                     $user->AdminUserChangePWD($_GET["id"], $_GET["newPwd"]);

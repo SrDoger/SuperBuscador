@@ -16,9 +16,11 @@ class session
     {
         return $_SESSION[$var];
     }
-    function isConnect()
+    function isConnect($locate)
     {
+        $this->setvalor("locate", $locate);
         $RQ = new RQ();
+        $RQ->request();
         if (isset($_SESSION['nombre'])) {
 
             $temp = '

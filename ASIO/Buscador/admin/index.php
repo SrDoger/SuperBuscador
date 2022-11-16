@@ -1,4 +1,3 @@
-
 <?php
 require("../classes/Session.php");
 $session = new session();
@@ -21,8 +20,8 @@ if ($_SESSION["admin"] == 1) {
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
 
             <?php
-            $session->setvalor("locate", "../");
-            $session->isConnect();
+
+            $session->isConnect("../");
             ?>
 
         </nav>

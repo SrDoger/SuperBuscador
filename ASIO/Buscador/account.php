@@ -20,8 +20,7 @@ if (isset($_SESSION["id"])) {
     <body>
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <?php
-            $session->setvalor("locate", null);
-            $session->isConnect();
+            $session->isConnect(null);
             ?>
         </nav>
         <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;);background-size: 200px;">
@@ -34,17 +33,17 @@ if (isset($_SESSION["id"])) {
                         </div>
                         <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
                             <form action="forms/forms.php" method="post">
-                                <input type="text" name="type" id="type" value="emailchange" hidden>
+                                <input type="text" name="type" id="type" value="emailchange" hidden required>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="email"><strong>Nuevo Mail</strong>
-                                        </label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail"></div>
+                                        </label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail" required></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong>
-                                        <br></label><input class="form-control" type="password" name="pwd"></div>
+                                        <br></label><input class="form-control" type="password" name="pwd" required></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
@@ -57,17 +56,17 @@ if (isset($_SESSION["id"])) {
                         </div>
                         <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
                             <form action="forms/forms.php" method="post">
-                                <input type="text" name="type" id="type" value="userChangePWD" hidden>
+                                <input type="text" name="type" id="type" value="userChangePWD" hidden required>
                                 <div class="row">
                                 <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="oldpwd"></div>
+                                        </label><input class="form-control" type="password" name="oldpwd" required></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="newpwd"></div>
+                                        </label><input class="form-control" type="password" name="newpwd" required></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>

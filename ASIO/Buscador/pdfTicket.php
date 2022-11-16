@@ -1,42 +1,10 @@
 <?php
+
 require_once('../fpdf184/fpdf.php');
 require_once('classes/Buscadores.php');
 require_once('classes/conexion.php');
 
-class SQL
-{
-    function boolList($list)
-    {
-        $aux = array();
-        foreach ($list as $id) {
-            $valor = intval($id); // if not int returns 0
-            if ($valor != 0)
-                $valor = 1;
-            array_push($aux, $valor);
-        }
-        return $aux;
-    }
-    function assemblerFile($empresa, $listadeproductos)
-    {
-        $merc = new merc();
-        //$ebay = new ebay();
 
-        $valoresTicket = array();
-
-        foreach ($empresa as $boolean) {
-
-            foreach ($listadeproductos as $idProduct) {
-                if ($boolean == 0)
-                    $rta = $merc->getValores($idProduct);
-                elseif ($boolean == 1)
-                    $rta = "no esta disponible para Ebay"; //$ebay->getvalores;
-                else $rta = "error 404";
-                array_push($valoresTicket, $rta);
-            }
-        }
-        return $valoresTicket;
-    }
-}
 
 class PDF extends FPDF
 {
@@ -116,8 +84,14 @@ $carrito = new Carrito();
 $pdf = new PDF();
 $lector = new SQL();
 $session = new session();
+$conexion = new BDD();
 
-$idproducto = $carrito->findCarrito($_SESSION["id"]);
+if (isset($_GET["id"]))
+    if (!$conexion->ifExist("id", "usuarios", $_GET["id"]))
+        $idproducto = $carrito->findCarrito($_GET["id"]);
+    else header("Location:error.php?error=No existe el usuario pedido");
+else if (isset($_SESSION["id"])) $idproducto = $carrito->findCarrito($_SESSION["id"]);
+
 //$idproducto = $carrito->findCarrito(12);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 14);
@@ -129,11 +103,12 @@ $pdf->SetFont('Arial', '', 14);
 
 $header = array('ID', 'Empresa', 'Producto', 'Precio');
 $data = $lector->assemblerFile($lector->boolList($idproducto), $idproducto);
+
 $total = 0;
 foreach ($data as $productos) {
     $total += $productos[3];
 }
-$footer = array('Costo Total','','',$total);
+$footer = array('Costo Total', '', '', $total);
 
 
 $pdf->AliasNbPages();
