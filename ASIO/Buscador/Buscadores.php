@@ -27,7 +27,6 @@
         </div>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
-        <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
@@ -36,20 +35,14 @@
                             <div class="col padMar">
                                 <div class="input-group">
                                     <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
-                                    <input type="checkbox" name="merc" id="" value="on">
-
-                                    <input type="checkbox" name="ebay" id="" value="on">
+                                    <input type="checkbox" class="option" name="merc" id="" value="on">
+                                    <input type="checkbox" class="option" name="ebay" id="" value="on">
                                     <div id="options">
                                         <input type="text" name="minPrice" placeholder="Precio Minimo" value="0" hidden>
-
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
                                     <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
                                     <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
-                                    <div id="options" style="display: none;">
-                                        <input type="text" class="filtro" name="minPrice" placeholder="Precio Minimo" value="0">
-                                        <input type="text" class="filtro" name="maxPrice" placeholder="Precio Maximo " value="10000000">
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,9 +52,8 @@
         </div>
     </header>
     <section class="cajaGrande">
-      <div class="ads"></div>
+      <div class="ad1 ads"></div>
       <div class="productos">
-
       <?php
       require_once("classes/Buscadores.php");
       if (isset($_POST['ebay'])) {
@@ -74,7 +66,7 @@
       }
       ?>
       </div>
-      <div class="ads"></div>
+      <div class="ad2 ads"></div>
     </section>
     <footer class="bg-light footer">
         <div class="container">

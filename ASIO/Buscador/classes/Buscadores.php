@@ -18,13 +18,13 @@ class merc
 
     $valor = 0;
     foreach ($data["results"] as $i) {
-      if ($valor >= 10) {
+      if ($valor >= 12) {
         break;
       }
       foreach ($i as $a["id"]) {
         $mlid = $a["id"];
         $data = json_decode(file_get_contents('https://api.mercadolibre.com/items/' . $mlid), true);
-        if ($valor >= 10) {
+        if ($valor >= 12) {
           break;
         }
         if ($_POST['maxPrice'] >= $data['price'] && $_POST['minPrice'] <= $data['price']) {
