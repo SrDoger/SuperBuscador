@@ -104,6 +104,12 @@ class usuario extends BDD
     }
   }
 
+  function SaveSearch($busqueda)
+  {
+    $session = new session();
+    $query = "INSERT INTO historialdebusquedas(id, consulta) VALUES (" . $_SESSION["id"] . ",'" . $busqueda . "')";
+    $this->conn->query($query);
+  }
   ////////////////////////////////////////////////////////////////////////////////
   //                         Funciones Administradoras
   function AdminUserDelete($id)
@@ -121,7 +127,7 @@ class usuario extends BDD
   function AdminUserCar($id)
   {
     if ($_SESSION["admin"] == 1) {
-      header("location:../pdfTicket.php?id=".$id);
+      header("location:../pdfTicket.php?id=" . $id);
     }
   }
   function AdminUserRecord($id)
@@ -155,6 +161,60 @@ class usuario extends BDD
       $query = "UPDATE usuarios SET nombre='" . $nickName . "' WHERE id='" . $id . "'";
       $this->conn->query($query);
       header("location:../admin/index.php?result=successfully");
+    }
+  }
+  function showSearchHistory($id)
+  {
+    if ($_SESSION["admin"] == 1) {
+
+      $query = "SELECT * from historialdebusquedas where id=" . $id;
+      $this->conn->query($query);
+      $resultado = $this->conn->query($query);
+      if ($resultado->num_rows > 0) {
+        $table = "
+          <table>
+            <tr>
+              <th><p>Id</p></th>
+              <th><p>Consulta</p></th>
+
+            </tr>";
+        while ($row = $resultado->fetch_assoc()) {
+          $table .=
+            "<tr>
+              <th><p>" . $row["id"] . "</p></th>
+              <th><p>" . $row["consulta"] . "</p></th>
+            </tr>";
+        }
+      }
+      $table .= "</table>";
+      echo $table;
+    }
+  }
+  function showAllSearchHistory()
+  {
+    if ($_SESSION["admin"] == 1) {
+
+      $query = "SELECT * from historialdebusquedas";
+      $this->conn->query($query);
+      $resultado = $this->conn->query($query);
+      if ($resultado->num_rows > 0) {
+        $table = "
+          <table>
+            <tr>
+              <th><p>Id</p></th>
+              <th><p>Consulta</p></th>
+
+            </tr>";
+        while ($row = $resultado->fetch_assoc()) {
+          $table .=
+            "<tr>
+              <th><p>" . $row["id"] . "</p></th>
+              <th><p>" . $row["consulta"] . "</p></th>
+            </tr>";
+        }
+      }
+      $table .= "</table>";
+      echo $table;
     }
   }
 
@@ -222,37 +282,36 @@ class Carrito extends BDD
 
 class SQL
 {
-    function boolList($list)
-    {
-        $aux = array();
-        foreach ($list as $id) {
-            $valor = intval($id); // if not int returns 0
-            if ($valor != 0)
-                $valor = 1;
-            array_push($aux, $valor);
-        }
-        return $aux;
+  function boolList($list)
+  {
+    $aux = array();
+    foreach ($list as $id) {
+      $valor = intval($id); // if not int returns 0
+      if ($valor != 0)
+        $valor = 1;
+      array_push($aux, $valor);
     }
-    function assemblerFile($empresa, $listadeproductos)
-    {
-        $merc = new merc();
-        //$ebay = new ebay();
+    return $aux;
+  }
+  function assemblerFile($empresa, $listadeproductos)
+  {
+    $merc = new merc();
+    //$ebay = new ebay();
 
-        $valoresTicket = array();
+    $valoresTicket = array();
 
-        foreach ($empresa as $boolean) {
+    foreach ($empresa as $boolean) {
 
-            foreach ($listadeproductos as $idProduct) {
-                if ($boolean == 0)
-                    $rta = $merc->getValores($idProduct);
-                elseif ($boolean == 1)
-                    $rta = "no esta disponible para Ebay"; //$ebay->getvalores;
-                else $rta = "error 404";
-                array_push($valoresTicket, $rta);
-                
-            }
-            break;
-        }
-        return $valoresTicket;
+      foreach ($listadeproductos as $idProduct) {
+        if ($boolean == 0)
+          $rta = $merc->getValores($idProduct);
+        elseif ($boolean == 1)
+          $rta = "no esta disponible para Ebay"; //$ebay->getvalores;
+        else $rta = "error 404";
+        array_push($valoresTicket, $rta);
+      }
+      break;
     }
+    return $valoresTicket;
+  }
 }

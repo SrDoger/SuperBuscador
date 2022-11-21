@@ -1,7 +1,10 @@
 <?php
 
 require_once("classes/Buscadores.php");
-echo $_POST['ebay']. $_POST['merc'];
+require_once("classes/Conexion.php");
+
+$user = new usuario();
+$user->SaveSearch($_POST['element']);
 if (isset($_POST['ebay'])) {
   $ebay = new ebay();
   $ebay->Search($_POST['element']);

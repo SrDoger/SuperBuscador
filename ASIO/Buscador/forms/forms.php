@@ -60,6 +60,14 @@ class formulario
                 if (isset($_GET["id"]))
                     $user->AdminUserChangeNickName($_GET["id"], $_GET["newNickName"]);
                 break;
+            case "showSearchHistory":
+                if (isset($_GET["id"]))
+                    $user->showSearchHistory($_GET["id"]);
+                break;
+            case "showAllSearchHistory":
+
+                $user->showAllSearchHistory();
+                break;
             case "showAllUsers":
                 $user->showAllUsers();
                 break;

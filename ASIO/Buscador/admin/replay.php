@@ -43,7 +43,13 @@ if ($_SESSION["admin"] == 1) {
             <div class="container">
                 <div class="row">
                     <div class="col-xl-9 mx-auto position-relative">
-                        <h1 class="mb-5">Tabla de usuarios</h1>
+                        <h1 class="mb-5">Tabla</h1>
+                        <?php
+                        //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
+                        $formulario->typeOfForm($_GET["query"]);
+
+
+                        ?>
                         <div class="?">
                             <h2>Eliminar cuenta</h2>
                             <form action="replay.php?" method="get">
@@ -96,13 +102,16 @@ if ($_SESSION["admin"] == 1) {
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
+                        <div class="?">
+                            <h2>Ver Historial de busquedas</h2>
+                            <form action="replay.php?" method="get">
+                                <input type="text" name="query" id="query" value="showSearchHistory" hidden required>
+                                <input type="number" name="id" id="id" required>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
                         
-                        <?php
-                        //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
-                        $formulario->typeOfForm($_GET["query"]);
-
-
-                        ?>
+                        
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
 

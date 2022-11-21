@@ -35,6 +35,7 @@ if ($_SESSION["admin"] == 1) {
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
                         <ol>
                             <li><a href="replay.php?query=showAllUsers">Ver lista de usuarios</a></li>
+                            <li><a href="replay.php?query=showAllSearchHistory">Ver lista de busquedas de los usuarios</a></li>
                             <li><a href="replay.php?query=deleteCount">Buscar usuario por mail</a></li>
                             <li><a href="replay.php?query=">Buscar usuario por id</a></li>
                         </ol>
