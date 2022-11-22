@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-    <div class="container"><a class="navbar-brand" href="../index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button></div>
+
         <?php
         require("../classes/Session.php");
         $session = new session();
@@ -32,11 +32,11 @@
                     <div class="iner">
                         <h1>Login</h1>
                         <form class="ask" action="forms.php" method="POST">
-                            <input type="text" name="type" id="" value="login" hidden>
+                            <input type="text" name="type" id="type" value="login" hidden>
                             <!-- <label for="user">Correo Electronico</label> -->
-                            <input class="user" name="mail" type="email" required placeholder="Correo Electronico">
+                            <input class="user" name="mail" type="email" required placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
                             <!-- <label for="pass">Contraseña</label> -->
-                            <input class="user" name="pwd" type="password" required placeholder="Contraseña">
+                            <input class="user" name="pwd" type="password" required placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                             <input type="submit" id="boton" value="Log-in">
                         </form>
                         <button class="register🖊">Regitrar</button>
@@ -47,9 +47,9 @@
                         <h1>Register</h1>
                         <form class="ask" action="forms.php" method="POST">
                             <input type="text" name="type" id="" value="register" hidden>
-                            <input type="email" name="mail" id="email" required placeholder="Mail">
-                            <input type="text" name="user" id="user" required placeholder="Usuario">
-                            <input type="password" name="pwd" id="pass" required placeholder="Contraseña">
+                            <input type="email" name="mail" id="email" required placeholder="Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
+                            <input type="text" name="user" id="user" required placeholder="Usuario" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <input type="password" name="pwd" id="pass" required placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                             <!--- <input type="password" name="pwd" id="" required placeholder="Confirmar Contraseña"> To Do -->
                             <input type="submit" id="boton" value="Sign-up">
                         </form>
@@ -61,26 +61,26 @@
     </header>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
-    <script>src="../assets/js/script.js"</script>
+    <script>
+        src = "../assets/js/script.js"
+    </script>
     <script>
         const openl = document.querySelector('.register🖊');
-        const openr =document.querySelector('.Log-in')
-        const login =document.querySelector('#login');
+        const openr = document.querySelector('.Log-in')
+        const login = document.querySelector('#login');
         const register = document.querySelector('#register');
 
 
-        openl.addEventListener('click',(e)=>{
-          e.preventDefault();
-          login.classList.add('show');
-          register.classList.remove('show');
+        openl.addEventListener('click', (e) => {
+            e.preventDefault();
+            login.classList.add('show');
+            register.classList.remove('show');
         });
 
-        openr.addEventListener('click',(e)=>{
-          e.preventDefault();
-          login.classList.remove('show');
-          register.classList.add('show');
+        openr.addEventListener('click', (e) => {
+            e.preventDefault();
+            login.classList.remove('show');
+            register.classList.add('show');
         });
     </script>
 </body>
-
-</html>

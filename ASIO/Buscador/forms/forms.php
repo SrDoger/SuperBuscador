@@ -11,6 +11,8 @@ class formulario
 
         if (isset($_GET["type"]))
             $this->typeOfForm($_GET["type"]);
+        else if (isset($_POST["type"]))
+            $this->typeOfForm($_POST["type"]);
     }
     function typeOfForm($type)
     {
@@ -37,6 +39,34 @@ class formulario
             case "AdminDeleteCount":
                 if (isset($_GET["id"]))
                     $user->AdminUserDelete($_GET["id"]);
+                break;
+            case "AdminUserCar":
+                if (isset($_GET["id"]))
+                    $user->AdminUserCar($_GET["id"]);
+                break;
+            case "AdminUserRecord":
+                if (isset($_GET["id"]))
+                    $user->AdminUserRecord($_GET["id"]);
+                break;
+            case "AdminUserChangePWD":
+                if (isset($_GET["id"]))
+                    $user->AdminUserChangePWD($_GET["id"], $_GET["newPwd"]);
+                break;
+            case "AdminUserChangeMail":
+                if (isset($_GET["id"]))
+                    $user->AdminUserChangeMail($_GET["id"], $_GET["newMail"]);
+                break;
+            case "AdminUserChangeNickName":
+                if (isset($_GET["id"]))
+                    $user->AdminUserChangeNickName($_GET["id"], $_GET["newNickName"]);
+                break;
+            case "showSearchHistory":
+                if (isset($_GET["id"]))
+                    $user->showSearchHistory($_GET["id"]);
+                break;
+            case "showAllSearchHistory":
+
+                $user->showAllSearchHistory();
                 break;
             case "showAllUsers":
                 $user->showAllUsers();

@@ -18,8 +18,7 @@
         <?php
         require("classes/Session.php");
         $session = new session();
-        $session->setvalor("locate", null);
-        $session->isConnect();
+        $session->isConnect(null);
         ?>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
