@@ -31,25 +31,19 @@ class merc
           $valor += 1;
           echo
           '<div class="containerMerc">
-                                <br>
-                                <form action="product.php" method="post">
-                                    <input type="text" value = "merc" name="api" hidden>
-                                    <input type="text" name="element" value="' . $data['id'] . '" hidden>
-                                    <input type="submit" value="producto">
-                                </form>
-                                
-                                <span class="material-symbols-outlined" onclick="sendtocarrito(' . "'" . $data['id'] . "'" . ')">shopping_cart</span>
-                                <h2>' . $data['title'] . '</h2>
-                                <br>
-                                <img class="imgPrincipal" src="' . $data['thumbnail'] . '">
-                                <br>
-                                <a href=' . $data['permalink'] . '>Link a Mercado Libre</a>
-                                <br>
-                                <p>Precio:' . $data['price'] . '$</p>
-                                <br>
-                                
-                            </div>
-                        ';
+                <img class="imgPrincipal" src="' . $data['thumbnail'] . '">
+                <div class="belowcard">
+                  <h5>' . $data['title'] . '</h5>
+                  <a href=' . $data['permalink'] . '>Link a Mercado Libre</a>
+                  <p>Precio:' . $data['price'] . '$</p>
+                  <span class="material-symbols-outlined" onclick="sendtocarrito(' . "'" . $data['id'] . "'" . ')">shopping_cart</span>
+                  <form action="product.php" method="post">
+                      <input type="text" value = "merc" name="api" hidden>
+                      <input type="text" name="element" value="' . $data['id'] . '" hidden>
+                      <input type="submit" value="producto">
+                  </form>
+                </div>
+            </div>';
           break;
         } else {
           break;
@@ -236,17 +230,17 @@ class ebay
         $results .= "
         
       <div class='containerEbay'>
-        <form action='product.php' method='post'>
-          <input type='submit' value='producto'>
-          <input type='text' value = 'ebay' name='api' hidden>
-          <input type='text' name='element' value='$itemid' hidden>
-          </form>
-
-          <h2>$title</h2>  
-            <img src=\"$pic\"><br>
+            <img class='imgPrincipal' src=\"$pic\">
+            <div class='belowcard'>
+            <h5>$title</h5> 
             <a href='$link\'>Link a Ebay</a>
-            <p>$subtitle</p>
             <p>Price $$price</p>
+            <form action='product.php' method='post'>
+              <input type='submit' value='producto'>
+              <input type='text' value = 'ebay' name='api' hidden>
+              <input type='text' name='element' value='$itemid' hidden>
+            </form>
+            </div>
       </div>";
       }
     }
