@@ -1,0 +1,66 @@
+/**-------vista de producos-------**/
+p{
+  margin: 0;
+}
+.cajaGrande{
+    /* background-color: antiquewhite; */
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: minmax(100px, auto);
+    height: auto;
+  }
+.productos{
+  grid-column: 2 / 3;
+  grid-row: 1;
+ }
+#mercadolibre, .ebay{
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(100px , 650px);
+  column-gap: 15px;
+  row-gap: 20px;
+  padding-top: 20px;
+}
+.ad1{  
+  grid-column: 1;
+  grid-row: 1;
+}
+.ad2{
+  grid-column: 3;
+  grid-row: 1;
+}
+.containerMerc, .containerEbay{
+  text-align: center;
+  border: 1px rgb(0,111,230) solid;
+  box-shadow: 0px 5px 10px; 
+  cursor: default;
+  transition: all 200ms ease;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 5px ;
+}
+.containerMerc:hover{
+    transform: scale(110%);
+}
+.containerEbay:hover{
+    transform: scale(110%);
+}
+.imgPrincipal{
+  border-bottom: grey solid 1px;
+  max-width: 600px;
+  max-height: 500px;
+  width: 100%;
+}
+.belowcard{
+  margin: 15px;
+}
+.option{
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 5px;
+  background-image: url(../img/nis/MLicon.png);
+}
