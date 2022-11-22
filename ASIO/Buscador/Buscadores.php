@@ -15,16 +15,16 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <?php
-                require("classes/Requiered.php");
-                require("classes/Session.php");
-                $session = new session();
-                $session->isConnect();  
-                ?>
-            </div>
-        </div>
+
+
+        <?php
+        require_once("classes/Buscadores.php");
+        require_once("classes/Conexion.php");
+        $session = new session();
+        $session->isConnect(null);
+        ?>
+
+
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div class="container">
@@ -42,7 +42,7 @@
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
                                     <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
-                                    <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
+                                        <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -52,21 +52,24 @@
         </div>
     </header>
     <section class="cajaGrande">
-      <div class="ad1 ads"></div>
-      <div class="productos">
-      <?php
-      require_once("classes/Buscadores.php");
-      if (isset($_POST['ebay'])) {
-        $ebay = new ebay();
-        $ebay->Search($_POST['element']);
-      }
-      if (isset($_POST['merc'])) {
-        $merc = new merc();
-        $merc->Search($_POST['element']);
-      }
-      ?>
-      </div>
-      <div class="ad2 ads"></div>
+        <div class="ad1 ads"></div>
+        <div class="productos">
+            <?php
+            if (isset($_POST["id"])) {
+                $user = new usuario();
+                $user->SaveSearch($_POST['element']);
+            }
+            if (isset($_POST['ebay'])) {
+                $ebay = new ebay();
+                $ebay->Search($_POST['element']);
+            }
+            if (isset($_POST['merc'])) {
+                $merc = new merc();
+                $merc->Search($_POST['element']);
+            }
+            ?>
+        </div>
+        <div class="ad2 ads"></div>
     </section>
     <footer class="bg-light footer">
         <div class="container">
