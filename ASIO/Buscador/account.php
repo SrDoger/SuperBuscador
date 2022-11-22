@@ -43,7 +43,7 @@ if (isset($_SESSION["id"])) {
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong>
-                                        <br></label><input class="form-control" type="password" name="pwd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{1,}"></div>
+                                        <br></label><input class="form-control" type="password" name="pwd" required pattern="[A-Za-Z0-9]{1,}"></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
@@ -60,13 +60,13 @@ if (isset($_SESSION["id"])) {
                                 <div class="row">
                                 <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="oldpwd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{1,}"></div>
+                                        </label><input class="form-control" type="password" name="oldpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="newpwd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{1,}"></div>
+                                        </label><input class="form-control" type="password" name="newpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>

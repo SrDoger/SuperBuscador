@@ -36,7 +36,7 @@
                             <!-- <label for="user">Correo Electronico</label> -->
                             <input class="user" name="mail" type="email" required placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
                             <!-- <label for="pass">Contraseña</label> -->
-                            <input class="user" name="pwd" type="password" required placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <input class="user" name="pwd" type="password" required placeholder="Contraseña" pattern="[A-Za-Z0-9]{1,}">
                             <input type="submit" id="boton" value="Log-in">
                         </form>
                         <button class="register🖊">Regitrar</button>
@@ -48,8 +48,8 @@
                         <form class="ask" action="forms.php" method="POST">
                             <input type="text" name="type" id="" value="register" hidden>
                             <input type="email" name="mail" id="email" required placeholder="Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
-                            <input type="text" name="user" id="user" required placeholder="Usuario" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                            <input type="password" name="pwd" id="pass" required placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <input type="text" name="user" id="user" required placeholder="Usuario" pattern="[A-Za-Z0-9]{1,}">
+                            <input type="password" name="pwd" id="pass" required placeholder="Contraseña" pattern="[A-Za-Z0-9]{1,}">
                             <!--- <input type="password" name="pwd" id="" required placeholder="Confirmar Contraseña"> To Do -->
                             <input type="submit" id="boton" value="Sign-up">
                         </form>
