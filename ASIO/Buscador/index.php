@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -16,12 +15,12 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-    
-                <?php
-                require("classes/Session.php");
-                $session = new session();
-                $session->isConnect(null);  
-                ?>
+
+        <?php
+        require("classes/Session.php");
+        $session = new session();
+        $session->isConnect(null);
+        ?>
     </nav>
     <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;) center / 200px repeat;">
         <div class="overlay"></div>
@@ -35,7 +34,7 @@
                         <div class="row padMar">
                             <div class="col padMar">
                                 <div class="input-group">
-                                    <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
+                                    <input class="form-control autocomplete" name="element" type="text"  pattern="[A-Za-z0-9]{1,}" placeholder="Escriba aqui" required>
                                     <input type="checkbox" name="merc" id="" value="on">
 
                                     <input type="checkbox" name="ebay" id="" value="on">
