@@ -15,6 +15,28 @@ if ($_SESSION["admin"] == 1) {
         <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
+    <style>
+        ol li{
+            list-style-type: none;
+            border-bottom: gray 0.5px solid;
+            background-color: white;
+            box-shadow: 0px 5px 10px gray;
+            margin-bottom: 5px;
+            cursor: default;
+            padding-left: 0px;
+            padding-right: 0px;
+
+        }
+        li:hover{
+            transform: scale(110%);
+            transform: translateX(-20px);
+        }
+        .lista{
+            background-color: white;
+            padding-top: 20px ;
+            padding-bottom: 20px;
+        }
+    </style>
 
     <body>
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
@@ -32,7 +54,7 @@ if ($_SESSION["admin"] == 1) {
                     <div class="col-xl-9 mx-auto position-relative">
                         <h1 class="mb-5">Seccion de Administracion</h1>
                     </div>
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+                    <div class=" lista col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
                         <ol>
                             <li><a href="replay.php?query=showAllUsers">Ver lista de usuarios</a></li>
                             <li><a href="replay.php?query=showAllSearchHistory">Ver lista de busquedas de los usuarios</a></li>
