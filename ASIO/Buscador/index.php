@@ -34,7 +34,7 @@
                         <div class="row padMar">
                             <div class="col padMar">
                                 <div class="input-group">
-                                    <input class="form-control autocomplete" name="element" type="text"  pattern="[A-Za-z0-9]{1,}" placeholder="Escriba aqui" required>
+                                    <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
                                     <input type="checkbox" name="merc" id="" value="on">
 
                                     <input type="checkbox" name="ebay" id="" value="on">
