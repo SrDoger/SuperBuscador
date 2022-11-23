@@ -44,7 +44,10 @@ class session
             </div>
             ';
         } else {
-            $temp = '<a class="btn btn-primary ms-auto" role="button" href="' . $_SESSION["locate"] . 'forms/login.php">Sign In</a>';
+            $temp = '
+            <div class="container"><a class="navbar-brand" href="' . $_SESSION["locate"] . 'index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+              
+            <a class="btn btn-primary ms-auto" role="button" href="' . $_SESSION["locate"] . 'forms/login.php">Sign In</a>';
         }
         echo $temp;
     }
