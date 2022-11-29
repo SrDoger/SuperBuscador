@@ -8,6 +8,7 @@ if (isset($_SESSION["id"])) {
 
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/nabar.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Home - main</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">

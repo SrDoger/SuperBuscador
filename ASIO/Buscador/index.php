@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - main</title>
+    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
@@ -35,20 +36,14 @@
                             <div class="col padMar">
                                 <div class="input-group">
                                     <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
-                                    <input type="checkbox" name="merc" id="" value="on">
-
-                                    <input type="checkbox" name="ebay" id="" value="on">
+                                    <button type="submit" class="btn btn-primary option" name="merc" id="" value="on"></button>
+                                    <button type="submit" class="btn btn-primary option" name="ebay" id="" value="on"></button>
                                     <div id="options">
                                         <input type="text" name="minPrice" placeholder="Precio Minimo" value="0" hidden>
-
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
-                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);"><i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
-
-                                    <div id="options" style="display: none;">
-                                        <input type="text" class="filtro" name="minPrice" placeholder="Precio Minimo" value="0">
-                                        <input type="text" class="filtro" name="maxPrice" placeholder="Precio Maximo " value="10000000">
-                                    </div>
+                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
+                                        <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
                                 </div>
                             </div>
                         </div>

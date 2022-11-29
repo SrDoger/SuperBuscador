@@ -24,20 +24,21 @@ class session
         if (isset($_SESSION['nombre'])) {
 
             $temp = '
+            
             <div class="container"><a class="navbar-brand" href="' . $_SESSION["locate"] . 'index.php">A.S.I.O</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <a class="btn btn-primary ms-auto" href="' . $_SESSION["locate"] . 'account.php">
-                    <p><span><i class="fa fa-user"></i></span>' . $_SESSION['nombre'] . '</p>
+                    <a class="btn btn-primary ms-auto btnav" href="' . $_SESSION["locate"] . 'account.php">
+                    <p><span><i class="fa fa-user"></i></span></p>
                 </a>';
             if ($_SESSION['admin'] == 1) {
-                $temp .= '<a class="btn btn-primary " href="' . $_SESSION["locate"] . 'admin/index.php"><p>administracion</p></a>';
+                $temp .= '<a class="btn btn-primary btnav " href="' . $_SESSION["locate"] . 'admin/index.php"><i class="fa fa-gear"></i></a>';
             }
             $temp .= '
-            <a class="btn btn-primary ms-auto" role="button" href="' . $_SESSION["locate"] . 'confirm.php"><span class="material-symbols-outlined">shopping_cart</span></a>
+            <a class="btn btn-primary btnav" role="button" href="' . $_SESSION["locate"] . 'confirm.php"><i class="fa fa-shopping-cart"></i></a>
                 <form action="' . $_SESSION["locate"] . 'forms/forms.php" method="post">
                 <input type="text" name="type" id="type" value="out" hidden>
-                <button type="submit">
-                    <p><span><i class="fa fa-sign-out"></i></span>out</p>
+                <button class="btn btn-primary btnav " type="submit">
+                    <p><span><i class="fa fa-sign-out"></i></span></p>
                 </button>
                 </form>
                 </div>
