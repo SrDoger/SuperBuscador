@@ -10,6 +10,8 @@ if ($_SESSION["admin"] == 1) {
 
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="../assets/css/navbar.css">
+        <link rel="stylesheet" href="../assets/css/admin.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Home - main</title>
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -18,10 +20,9 @@ if ($_SESSION["admin"] == 1) {
         <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <style>
-            p {
-                color: greenyellow;
+            form{
+                margin-block-end: 0;
             }
-
             table,
             th,
             td {
@@ -47,74 +48,10 @@ if ($_SESSION["admin"] == 1) {
                         <?php
                         //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
                         $formulario->typeOfForm($_GET["query"]);
-
-
                         ?>
-                        <div class="?">
-                            <h2>Eliminar cuenta</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminDeleteCount" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Cambiar contraseña de cuenta</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangePWD" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <input type="text" name="newPwd" id="newPwd" required pattern="[A-Za-Z0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Cambiar mail de cuenta</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <input type="mail" name="mail" id="newMail" required pattern="[A-Za-Z0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Cambiar nombre de usuario de cuenta</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserChangeNickName" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <input type="text" name="newNickName" id="newNickName" required pattern="[A-Za-Z0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Ver Carrito</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserCar" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                              
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Ver Historial</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="AdminUserRecord" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div class="?">
-                            <h2>Ver Historial de busquedas</h2>
-                            <form action="replay.php?" method="get">
-                                <input type="text" name="query" id="query" value="showSearchHistory" hidden required>
-                                <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        
-                        
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
-
+                            
                         <li><a href="index.php">volver al atras</a></li>
                     </div>
                 </div>

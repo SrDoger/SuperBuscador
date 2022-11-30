@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - main</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -33,16 +35,16 @@
                     <form action="Buscadores.php" method="post">
                         <div class="row padMar">
                             <div class="col padMar">
-                                <div class="input-group">
+                            <div class="input-group">
                                     <input class="form-control autocomplete" name="element" type="text" placeholder="Escriba aqui" required>
-                                    <input type="submit" class="option" name="merc" id="" value="on">
-                                    <input type="submit" class="option" name="ebay" id="" value="on">
+                                    <button type="submit" class="btn btn-primary option" name="merc"  value="on"><img src="assets/img/nis/MLicon.png"></button>
+                                    <button type="submit" class="btn btn-primary option" name="ebay" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px; " value="on"><img src="assets/img/nis/ebayicon.png"></button>
                                     <div id="options">
                                         <input type="text" name="minPrice" placeholder="Precio Minimo" value="0" hidden>
                                         <input type="text" name="maxPrice" placeholder="Precio Maximo " value="10000000" hidden>
                                     </div>
-                                    <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
-                                        <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button>
+                                    <!-- <button class="btn btn-warning" type="submit" style="background: rgb(0,111,230);color: rgb(255,255,255);border-style: none;border-color: rgb(255,255,255);">
+                                        <i class="fa fa-search" style="border-color: rgb(255,255,255);"></i></button> -->
                                 </div>
                             </div>
                         </div>

@@ -36,11 +36,11 @@ class merc
                   <h5>' . $data['title'] . '</h5>
                   <a href=' . $data['permalink'] . '>Link a Mercado Libre</a>
                   <p>Precio:' . $data['price'] . '$</p>
-                  <span class="material-symbols-outlined" onclick="sendtocarrito(' . "'" . $data['id'] . "'" . ')">shopping_cart</span>
+                  <span class="btn btn-primary" style="margin-bottom: 5px;" onclick="sendtocarrito(' . "'" . $data['id'] . "'" . ')"><i class="fa fa-shopping-cart"></i></span>
                   <form action="product.php" method="post">
                       <input type="text" value = "merc" name="api" hidden>
                       <input type="text" name="element" value="' . $data['id'] . '" hidden>
-                      <input type="submit" value="producto">
+                      <input type="submit" class="btn btn-primary" value="producto">
                   </form>
                 </div>
             </div>';
@@ -236,7 +236,7 @@ class ebay
             <a href='$link\'>Link a Ebay</a>
             <p>Price $$price</p>
             <form action='product.php' method='post'>
-              <input type='submit' value='producto'>
+              <input type='submit' class='btn btn-primary' style='margin-bottom: 5px;'' value='producto'>
               <input type='text' value = 'ebay' name='api' hidden>
               <input type='text' name='element' value='$itemid' hidden>
             </form>

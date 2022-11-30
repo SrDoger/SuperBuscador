@@ -4,11 +4,13 @@ $session = new session();
 if (isset($_SESSION["id"])) {
 ?>
     <!DOCTYPE html>
+    <html lang="en">
     <html>
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="assets/css/nabar.css">
+        <link rel="stylesheet" href="assets/css/account.css">
+        <link rel="stylesheet" href="assets/css/navbar.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Home - main</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -26,54 +28,57 @@ if (isset($_SESSION["id"])) {
         </nav>
         <header class="text-center text-white masthead" style="background: url(&quot;assets/img/nis/idea1.png&quot;);background-size: 200px;">
             <div class="container">
-                <div class="col-lg-12 d-lg-flex justify-content-lg-center">
+                <div class=" col-lg-12 d-lg-flex justify-content-lg-center">
                     <!-- Configuraciones de usuario -->
-                    <div class="card shadow mb-3">
-                        <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Cambio de Mail</p>
+                    <div class="cont1">
+                        <div class="">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 fw-bold">Cambio de Mail</p>
+                            </div>
+                            <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
+                                <form action="forms/forms.php" method="post">
+                                    <input type="text" name="type" id="type" value="emailchange" hidden required>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group mb-3"><label class="form-label" for="email"><strong>Nuevo Mail</strong>
+                                            </label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong>
+                                            <br></label><input class="form-control" type="password" name="pwd" required pattern="[A-Za-Z0-9]{1,}"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
-                            <form action="forms/forms.php" method="post">
-                                <input type="text" name="type" id="type" value="emailchange" hidden required>
-                                <div class="row">
+                        <div class="">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 fw-bold">Cambio de Contraseña</p>
+                            </div>
+                            <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
+                                <form action="forms/forms.php" method="post">
+                                    <input type="text" name="type" id="type" value="userChangePWD" hidden required>
+                                    <div class="row">
                                     <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="email"><strong>Nuevo Mail</strong>
-                                        </label><input class="form-control" type="email" placeholder="nuevomail@example.com" name="newmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+                                            <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br>
+                                            </label><input class="form-control" type="password" name="oldpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Contraseña</strong>
-                                        <br></label><input class="form-control" type="password" name="pwd" required pattern="[A-Za-Z0-9]{1,}"></div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
+                                            </label><input class="form-control" type="password" name="newpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
-                            </form>
+                                    <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="card shadow mb-3">
-                        <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Cambio de Contraseña</p>
-                        </div>
-                        <div class="card-body" style="color: rgb(0,0,0); width: 400px;">
-                            <form action="forms/forms.php" method="post">
-                                <input type="text" name="type" id="type" value="userChangePWD" hidden required>
-                                <div class="row">
-                                <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Anterior Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="oldpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group mb-3"><label class="form-label" for="password"><strong>Nueva Contraseña</strong><br>
-                                        </label><input class="form-control" type="password" name="newpwd" required pattern="[A-Za-Z0-9]{1,}"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3"><button class="btn btn-primary btn-sm" type="submit">Guardar Cambios</button></div>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </header>
