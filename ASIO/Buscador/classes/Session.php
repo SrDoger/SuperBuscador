@@ -34,7 +34,7 @@ class session
                 $temp .= '<a class="btn btn-primary btnav " href="' . $_SESSION["locate"] . 'admin/index.php"><i class="fa fa-gear"></i></a>';
             }
             $temp .= '
-            <a class="btn btn-primary btnav" role="button" href="' . $_SESSION["locate"] . 'confirm.php"><i class="fa fa-shopping-cart"></i></a>
+            <a type="button" class="btn btn-primary btnav" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button" href="' . $_SESSION["locate"] . '"><i class="fa fa-shopping-cart"></i></a>
                 <form action="' . $_SESSION["locate"] . 'forms/forms.php" method="post">
                 <input type="text" name="type" id="type" value="out" hidden>
                 <button class="btn btn-primary btnav " type="submit">
@@ -42,6 +42,25 @@ class session
                 </button>
                 </form>
                 </div>
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Compra</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row" style="text-align: center;">
+                        <h2>Confirmar Compra:</h2>
+                        <a class="col-md-5 btn btn-primary ms-auto" style="margin:auto;" role="button" href="' . $_SESSION["locate"] . 'pdfTicket.php"><span>Confirm <i class="fa fa-shopping-cart"></i></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modals">
+                  
             </div>
             ';
         } else {

@@ -5,24 +5,26 @@
 }
 form{
     margin-block-end: 0;
+    display: grid;
+    gap: 10px;
 }
 li{
     list-style-type: none;
     border-bottom: gray 0.5px solid;
     background-color: white;
     box-shadow: 0px 5px 10px gray;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     cursor: default;
     padding-left: 0px;
     padding-right: 0px;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
     max-width: 17rem;
     text-align: center;
 }
 .lista{
-    background-color: white;
+    background-color: #f8f9fa;
     padding-top: 20px ;
     padding-bottom: 10px;
     margin-left: 1rem;
@@ -35,23 +37,29 @@ li{
     text-decoration: none;
 }
 .lista h2{
-    margin-left: 2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .parameters{
-    background-color: white;
+    background-color: #f8f9fa;
     margin-right: 1rem;
     margin-bottom: 5rem;
     border-radius: 10px;
 }
 .edits{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; */
     margin: 2rem;
     text-align: center;
 }
 .✔{
     margin-left: auto;
     margin-right: auto;
-
+    max-width: 30rem !important;
+}
+ .✔ button{
+    max-width: 10rem !important;
+    
 }

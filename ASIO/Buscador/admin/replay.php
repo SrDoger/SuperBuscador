@@ -20,14 +20,35 @@ if ($_SESSION["admin"] == 1) {
         <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <style>
-            form{
-                margin-block-end: 0;
+            table {
+               width: 100%;
+               border: 1px solid #000;
             }
-            table,
-            th,
-            td {
-                background-color: black;
-                border: 1px solid blue;
+            th, td {
+               width: 25%;
+               text-align: left;
+               vertical-align: bottom;
+               border: 1px solid #006fe6;
+               border-collapse: collapse;
+               padding: 0.3em;
+               caption-side: bottom;
+            }
+            caption {
+               padding: 0.3em;
+               color: #fff;
+                background: #000;
+            }
+            th {
+               background: #eee;
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1000px; 
+            }
+            .info{
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
     </head>
@@ -43,16 +64,19 @@ if ($_SESSION["admin"] == 1) {
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-9 mx-auto position-relative">
+                    <div class="col-xl-9 mx-auto Info position-relative">
                         <h1 class="mb-5">Tabla</h1>
-                        <?php
-                        //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
-                        $formulario->typeOfForm($_GET["query"]);
-                        ?>
+                        <div>
+                            <?php
+                            //$formulario->typeOfForm($_GET["type"]); to do mostrar todas las consultas por aca y cambiar nombre al mismo archivo
+                            $formulario->typeOfForm($_GET["query"]);
+                            ?>
+                        </div>
+                        
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
                             
-                        <li><a href="index.php">volver al atras</a></li>
+                        <li class="btn btn-primary" style=" border-radius: 10px; margin-top: 10px;"><a style="color: white ; text-decoration: none;" href="index.php">volver al atras</a></li>
                     </div>
                 </div>
             </div>

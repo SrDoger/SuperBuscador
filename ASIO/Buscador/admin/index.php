@@ -21,7 +21,6 @@ if ($_SESSION["admin"] == 1) {
         <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
 
             <?php
-
             $session->isConnect("../");
             ?>
 
@@ -50,15 +49,16 @@ if ($_SESSION["admin"] == 1) {
             </div>
             <div class="parameters">
                 <div class="edits">
-                    <div class="? ✔">
-                        <h2>Eliminar cuenta</h2>
+                    <div class="row">
+                    <div class="? ✔ col py-5">
+                        <h2>Ver Historial de busquedas</h2>
                         <form action="replay.php?" method="get">
-                            <input type="text" name="query" id="query" value="AdminDeleteCount" hidden required>
+                            <input type="text" name="query" id="query" value="showSearchHistory" hidden required>
                             <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
+                    <div class="? ✔ col py-5">
                         <h2>Cambiar contraseña de cuenta</h2>
                         <form action="replay.php?" method="get">
                             <input type="text" name="query" id="query" value="AdminUserChangePWD" hidden required>
@@ -67,16 +67,17 @@ if ($_SESSION["admin"] == 1) {
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
-                        <h2>Cambiar mail de cuenta</h2>
+                    </div>
+                    <div class="row">
+                    <div class="? ✔ col py-5">
+                        <h2>Ver Historial</h2>
                         <form action="replay.php?" method="get">
-                            <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden required>
+                            <input type="text" name="query" id="query" value="AdminUserRecord" hidden required>
                             <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                            <input type="mail" name="mail" id="newMail" required pattern="[A-Za-Z0-9]{1,}">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
+                    <div class="? ✔ col py-5">
                         <h2>Cambiar nombre de usuario de cuenta</h2>
                         <form action="replay.php?" method="get">
                             <input type="text" name="query" id="query" value="AdminUserChangeNickName" hidden required>
@@ -85,7 +86,9 @@ if ($_SESSION["admin"] == 1) {
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
+                    </div>
+                    <div class="row">
+                    <div class="? ✔ col py-5">
                         <h2>Ver Carrito</h2>
                         <form action="replay.php?" method="get">
                             <input type="text" name="query" id="query" value="AdminUserCar" hidden required>
@@ -93,22 +96,27 @@ if ($_SESSION["admin"] == 1) {
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
-                        <h2>Ver Historial</h2>
+                    <div class="? ✔ col py-5">
+                        <h2>Cambiar mail de cuenta</h2>
                         <form action="replay.php?" method="get">
-                            <input type="text" name="query" id="query" value="AdminUserRecord" hidden required>
+                            <input type="text" name="query" id="query" value="AdminUserChangeMail" hidden required>
+                            <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
+                            <input type="mail" name="mail" id="newMail" required pattern="[A-Za-Z0-9]{1,}">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="? ✔ col py-5">
+                        <h2>Eliminar cuenta</h2>
+                        <form action="replay.php?" method="get">
+                            <input type="text" name="query" id="query" value="AdminDeleteCount" hidden required>
                             <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                    <div class="? ✔">
-                        <h2>Ver Historial de busquedas</h2>
-                        <form action="replay.php?" method="get">
-                            <input type="text" name="query" id="query" value="showSearchHistory" hidden required>
-                            <input type="number" name="id" id="id" required pattern="[0-9]{1,}">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
